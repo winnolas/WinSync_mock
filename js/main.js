@@ -24,7 +24,7 @@ if (/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
 /* ===================================
  Import Bootstrap Script
  ====================================== */
-import "../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js";
+import "../js/bootstrap.bundle.min.js";
 
 // PopOver
 document.querySelectorAll('[data-bs-toggle="popover"]')
