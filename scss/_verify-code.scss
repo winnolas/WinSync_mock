@@ -1,0 +1,27 @@
+form.pw-verify {
+	text-align: center;
+  padding: 0;
+  border-radius: 4px;
+
+	h1, h2, h3, h4, h5, h6 {
+		font-family: $lexend;
+	}
+
+	h1.h2,
+	h2 {
+		font-size:1.3rem !important;
+	}
+  
+  .form-control {
+    display: block;
+    height: 50px;
+    margin-right: 0.5rem;
+    text-align: center;
+    font-size: 1.25rem;
+    min-width: 0;
+    
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}

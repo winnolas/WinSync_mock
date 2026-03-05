@@ -1,0 +1,72 @@
+// Define theme variables (optional)
+$slider-track-color: $ocrx-light;   // Light blue
+$slider-thumb-color: $ocrx-dark;   // Bootstrap primary
+$slider-track-height: 6px;
+$slider-thumb-size: 16px;
+
+// Custom range slider styles
+input[type='range'] {
+  // Remove default styles (optional)
+  appearance: none;
+  width: 100%;
+  height: $slider-thumb-size;
+
+  // Fallback for accent color
+  accent-color: $slider-thumb-color;
+
+  // WebKit Browsers (Chrome, Safari, Edge)
+  &::-webkit-slider-runnable-track {
+    background: $slider-track-color;
+    height: $slider-track-height;
+    border-radius: 10px;
+  }
+
+  &::-webkit-slider-thumb {
+    appearance: none;
+    margin-top: -($slider-thumb-size - $slider-track-height) / 2;
+    height: $slider-thumb-size;
+    width: $slider-thumb-size;
+    background: $slider-thumb-color;
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+  }
+
+  // Firefox
+  &::-moz-range-track {
+    background: $slider-track-color;
+    height: $slider-track-height;
+    border-radius: 10px;
+  }
+
+  &::-moz-range-thumb {
+    height: $slider-thumb-size;
+    width: $slider-thumb-size;
+    background: $slider-thumb-color;
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+  }
+
+  // Edge (old versions, optional)
+  &::-ms-track {
+    background: transparent;
+    border-color: transparent;
+    color: transparent;
+  }
+
+  &::-ms-fill-lower,
+  &::-ms-fill-upper {
+    background: $slider-track-color;
+    border-radius: 10px;
+  }
+
+  &::-ms-thumb {
+    height: $slider-thumb-size;
+    width: $slider-thumb-size;
+    background: $slider-thumb-color;
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+  }
+}

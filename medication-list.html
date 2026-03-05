@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<title>WinSync</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="author" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta name="description" content="">
+
+	<!-- favicon icon -->
+	<link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+	<link rel="manifest" href="img/favicon/site.webmanifest">
+
+	<!-- google fonts preconnect -->
+	<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+	<!-- main style -->
+	<link rel="stylesheet" href="css/ocrx.min.css" />
+</head>
+
+
+<body>
+	<div id="app" class="bg-content">
+		<header class="main-header p-2">
+
+			<div class="wpx-40">
+				<button type="button" class="btn p-0 wpx-40 hpx-40 d-flex align-items-center justify-content-center" onclick="location.href = 'carevisits.html';">
+					<i class="uil uil-arrow-left fspx-30 lhpx-30 mpxs-n-1"></i>
+				</button>
+			</div>
+
+			<div class="text-ocrx-dark d-flex flex-wrap gap-2">
+				<h2 class="m-0 fs-6 fw-bold">Medication Profiles</h2>
+				<div class="fspx-10 lhpx-10 fw-600 rounded-1 btn btn-outline-ocrx-dark ppxx-3 ppxy-2 w-mincontent">Beta</div>
+			</div>
+
+			<div class="ms-auto d-flex flex-row justify-content-end gap-2">
+				<!-- <button type="button" class="btn p-0 wpx-40 hpx-40 d-flex align-items-center justify-content-center position-relative">
+					<i class="uil uil-bell fspx-30 lhpx-30 mpxs-n-1"></i>
+					<span class="position-absolute translate-middle bg-danger border border-light rounded-circle hpx-15 wpx-15" style="top:10px; right:-5px;">
+						<span class="visually-hidden"></span>
+					</span>
+				</button> -->
+
+				<button type="button" class="btn p-0 wpx-40 hpx-40 d-flex align-items-center justify-content-center position-relative" data-bs-toggle="dropdown" aria-expanded="false">
+					<span class="material-symbols-rounded fspx-30 lhpx-30 ">more_vert</span>
+				</button>
+				<ul class="dropdown-menu p-0">
+					<li>
+						<a class="dropdown-item d-flex flex-row align-items-center gap-2 fspx-13 lhpx-13 fw-500 ppx-10" href="switchagency.html">
+							<i class="uil uil-clinic-medical fspx-18 lhpx-18"></i>
+							<span>Swtich Agency</span>
+						</a>
+					</li>
+					<li>
+						<hr class="dropdown-divider m-0">
+					</li>
+					<li>
+						<a class="dropdown-item d-flex flex-row align-items-center gap-2 fspx-13 lhpx-13 fw-500 ppx-10" href="#">
+							<i class="uil uil-signout fspx-18 lhpx-18"></i>
+							<span>Log Out</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+
+		</header>
+
+		<div></div>
+
+		<main class="main-content mx-2 rounded">
+			<div class="card p-3 d-flex flex-column gap-0 mb-2 bg-ocrx-card">
+				<div class="d-flex flex-row gap-2 align-items-center  ppxe-30">
+					<a href="#" class="d-block link-body-emphasis text-decoration-none">
+						<img src="./img/profile/profile-1.png" alt="" width="50" height="50" class="rounded-circle">
+					</a>
+					<div>
+						<h2 class="m-0 mb-0 fs-5 fw-bold text-ocrx-dark">JOHN DOE</h2>
+						<div class="fspx-12 lhpx-16 text-body-secondary"><b>Medication Profile</b> - 04/12/2025</div>
+					</div>
+				</div>
+
+				<hr>
+
+				<div class="d-flex flex-column gap-1">
+					<h3 class="m-0 mb-0 fspx-14 fw-bold text-ocrx-dark d-flex flex-column gap-1 mb-2">
+						DR. DOE, JENNA
+						<span class="fspx-10 fw-400 text-uppercase text-body-secondary">Physician</span>
+					</h3>
+					<div class="d-grid grid-auto-col">
+						<div class="fspx-12 lhpx-14 text-body-primary d-flex flex-column gap-1">
+							<span class="fw-600">(555) 987-6543</span>
+							<span class="fspx-10 fw-400 text-uppercase">Phone</span>
+						</div>
+						<!-- <div class="fspx-12 lhpx-14 text-body-primary d-flex flex-column gap-1">
+							<span class="fw-600">(333) 123-4567</span>
+							<span class="fspx-10 fw-400 text-uppercase">Fax</span>
+						</div>
+						<div class="fspx-12 lhpx-14 text-body-primary d-flex flex-column gap-1">
+							<span class="fw-600">1234567890</span>
+							<span class="fspx-10 fw-400 text-uppercase">NPI</span>
+						</div> -->
+					</div>
+				</div>
+
+				<!-- <div class="position-absolute d-flex flex-row gap-2" style="top:.8rem; right: .8rem;">
+					<button type="button" class="btn btn-outline-ocrx-primary p-0 wpx-25 hpx-25 d-flex align-items-center justify-content-center position-relative" data-bs-toggle="dropdown" aria-expanded="false">
+						<span class="material-symbols-rounded fspx-22 lhpx-22">more_vert</span>
+					</button>
+					<ul class="dropdown-menu p-0">
+						<li>
+							<a class="dropdown-item d-flex flex-row align-items-center gap-2 fspx-13 lhpx-13 fw-500 ppx-10">
+								<span class="material-symbols-outlined fspx-18">print</span>
+								<span>Print</span>
+							</a>
+						</li>
+						<li><hr class="dropdown-divider m-0"></li>
+						<li>
+							<button class="dropdown-item d-flex flex-row align-items-center gap-2 fspx-13 lhpx-13 fw-500 ppx-10">
+								<span class="material-symbols-outlined fspx-18">mixture_med</span>
+								<span>Drug Interaction</span>
+							</button>
+						</li>
+						<li><hr class="dropdown-divider m-0"></li>
+						<li>
+							<button class="dropdown-item d-flex flex-row align-items-center gap-2 fspx-13 lhpx-13 fw-500 ppx-10" data-bs-toggle="modal" data-bs-target="#delete-medication">
+								<span class="material-symbols-outlined fspx-18">delete</span>
+								<span>Delete</span>
+							</button>
+						</li>
+					</ul>
+				</div> -->
+			</div>
+
+			<ul class="list-group list-ocrx-link">
+				<li class="list-group-item d-flex gap-3">
+					<a href="medication-info.html" class="w-100 mpxe-50">
+						<strong>View Medication Profile Report</strong>
+						<small class="d-flex flex-row gap-1 mt-1 text-body-secondary fw-medium  align-items-center">
+							<span class="material-symbols-outlined fill fspx-16 lhpx-16">calendar_month</span>
+							<span class="me-2">07/07/2025</span>
+
+							<span class="material-symbols-outlined fill fspx-16 lhpx-16">account_circle</span>
+							<span>Demo RN - Dana Jane Doe</span>
+						</small>
+					</a>
+					<div class="position-absolute d-flex flex-row gap-2" style="top:.7rem; right: .7rem;">
+						<button type="button" class="btn btn-outline-primary p-0 wpx-25 hpx-25 d-flex align-items-center justify-content-center position-relative">
+							<span class="material-symbols-rounded fspx-20 lhpx-20">flag</span>
+						</button>
+
+						<button type="button" class="btn btn-outline-ocrx-primary p-0 wpx-25 hpx-25 d-flex align-items-center justify-content-center position-relative" data-bs-toggle="dropdown" aria-expanded="false">
+							<span class="material-symbols-rounded fspx-22 lhpx-22 ">more_vert</span>
+						</button>
+						<ul class="dropdown-menu p-0">
+							<li>
+								<a class="dropdown-item d-flex flex-row align-items-center gap-2 fspx-13 lhpx-13 fw-500 ppx-10" href="medication-info.html">
+									<span class="material-symbols-outlined fspx-18">edit</span>
+									<span>Edit</span>
+								</a>
+							</li>
+							<li>
+								<hr class="dropdown-divider m-0">
+							</li>
+							<li>
+								<button class="dropdown-item d-flex flex-row align-items-center gap-2 fspx-13 lhpx-13 fw-500 ppx-10" data-bs-toggle="modal" data-bs-target="#delete-medication">
+									<span class="material-symbols-outlined fspx-18">delete</span>
+									<span>Delete</span>
+								</button>
+							</li>
+						</ul>
+					</div>
+				</li>
+
+				<li class="list-group-item d-flex gap-3">
+					<a href="medication-info.html" class="w-100 mpxe-50">
+						<strong>View Medication Profile Report</strong>
+						<small class="d-flex flex-row gap-1 mt-1 text-body-secondary fw-medium  align-items-center">
+							<span class="material-symbols-outlined fill fspx-16 lhpx-16">calendar_month</span>
+							<span class="me-2">07/07/2025</span>
+
+							<span class="material-symbols-outlined fill fspx-16 lhpx-16">account_circle</span>
+							<span>Demo RN - Dana Jane Doe</span>
+						</small>
+					</a>
+					<div class="position-absolute d-flex flex-row gap-2" style="top:.7rem; right: .7rem;">
+						<button type="button" class="btn btn-outline-danger p-0 wpx-25 hpx-25 d-flex align-items-center justify-content-center position-relative">
+							<span class="material-symbols-rounded fspx-20 lhpx-20">flag</span>
+						</button>
+
+						<button type="button" class="btn btn-outline-ocrx-primary p-0 wpx-25 hpx-25 d-flex align-items-center justify-content-center position-relative" data-bs-toggle="dropdown" aria-expanded="false">
+							<span class="material-symbols-rounded fspx-22 lhpx-22 ">more_vert</span>
+						</button>
+						<ul class="dropdown-menu p-0">
+							<li>
+								<a class="dropdown-item d-flex flex-row align-items-center gap-2 fspx-13 lhpx-13 fw-500 ppx-10" href="medication-info.html">
+									<span class="material-symbols-outlined fspx-18">edit</span>
+									<span>Edit</span>
+								</a>
+							</li>
+							<li>
+								<hr class="dropdown-divider m-0">
+							</li>
+							<li>
+								<button class="dropdown-item d-flex flex-row align-items-center gap-2 fspx-13 lhpx-13 fw-500 ppx-10" data-bs-toggle="modal" data-bs-target="#delete-medication">
+									<span class="material-symbols-outlined fspx-18">delete</span>
+									<span>Delete</span>
+								</button>
+							</li>
+						</ul>
+					</div>
+				</li>
+
+				<li class="list-group-item d-flex gap-3">
+					<a href="medication-info.html" class="w-100 mpxe-50">
+						<strong>View Medication Profile Report</strong>
+						<small class="d-flex flex-row gap-1 mt-1 text-body-secondary fw-medium  align-items-center">
+							<span class="material-symbols-outlined fill fspx-16 lhpx-16">calendar_month</span>
+							<span class="me-2">07/07/2025</span>
+
+							<span class="material-symbols-outlined fill fspx-16 lhpx-16">account_circle</span>
+							<span>Demo RN - Dana Jane Doe</span>
+						</small>
+					</a>
+					<div class="position-absolute d-flex flex-row gap-2" style="top:.7rem; right: .7rem;">
+						<button type="button" class="btn btn-outline-success p-0 wpx-25 hpx-25 d-flex align-items-center justify-content-center position-relative">
+							<span class="material-symbols-rounded fspx-20 lhpx-20">flag</span>
+						</button>
+
+						<button type="button" class="btn btn-outline-ocrx-primary p-0 wpx-25 hpx-25 d-flex align-items-center justify-content-center position-relative" data-bs-toggle="dropdown" aria-expanded="false">
+							<span class="material-symbols-rounded fspx-22 lhpx-22 ">more_vert</span>
+						</button>
+						<ul class="dropdown-menu p-0">
+							<li>
+								<a class="dropdown-item d-flex flex-row align-items-center gap-2 fspx-13 lhpx-13 fw-500 ppx-10" href="medication-info.html">
+									<span class="material-symbols-outlined fspx-18">edit</span>
+									<span>Edit</span>
+								</a>
+							</li>
+							<li>
+								<hr class="dropdown-divider m-0">
+							</li>
+							<li>
+								<button class="dropdown-item d-flex flex-row align-items-center gap-2 fspx-13 lhpx-13 fw-500 ppx-10" data-bs-toggle="modal" data-bs-target="#delete-medication">
+									<span class="material-symbols-outlined fspx-18">delete</span>
+									<span>Delete</span>
+								</button>
+							</li>
+						</ul>
+					</div>
+				</li>
+			</ul>
+
+
+
+		</main>
+
+		<footer class="main-footer">
+			<div class="nav-footer pagination">
+				<!-- <button onclick="location.href = 'medication-info.html';">
+					<span class="material-symbols-rounded" style="">cancel</span>
+					<span>Cancel</span>
+				</button> -->
+				<button onclick="location.href = 'medication-info.html';">
+					<span class="material-symbols-outlined">note_add</span>
+					<span>Update Medication Profile</span>
+				</button>
+				<!-- <button onclick="location.href = 'medication-info.html';">
+					<span class="material-symbols-rounded" style="">check_circle</span>
+					<span>Save</span>
+				</button> -->
+			</div>
+		</footer>
+
+	</div><!-- end #app -->
+
+	<div class="modal  fade rounded-1" id="delete-medication" tabindex="-1" aria-labelledby="delete-medication" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered">
+			<div class="modal-content bg-warning-subtle">
+				<div class="modal-header p-3 text-bg-warning">
+					<h2 class="modal-title fs-6 fw-600" id="delete-medication">Confirm Delete</h2>
+					<button type="button" class="btn-close fspx-15" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body  p-3">
+					Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugit non quibusdam minus rem ratione beatae delectus culpa odit enim ullam quos neque autem iste nisi ipsum placeat, maxime, veniam sint?
+				</div>
+				<div class="modal-footer  p-2 d-flex align-items-center justify-content-between">
+					<button type="button" class="btn btn-sm btn-danger wpx-75" data-bs-dismiss="modal">Cancel</button>
+					<button type="button" class="btn btn-sm btn-success  wpx-75">Confirm</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+<script type="module" src="js/main.js"></script>
+</body>
+
+</html>

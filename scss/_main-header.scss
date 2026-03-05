@@ -1,0 +1,10 @@
+.main-header {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap:.75rem;
+
+	h1, h2, h3 {
+		line-height: 1;
+	}
+}

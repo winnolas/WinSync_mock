@@ -1,0 +1,45 @@
+.blazored-modal {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	color: var(--bs-modal-color);
+	pointer-events: auto;
+	background-color: $white;
+	background-clip: padding-box;
+	border: var(--bs-modal-border-width) solid var(--bs-modal-border-color);
+	border-radius: .5rem;
+
+	.bm-header {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		padding: .75rem .75rem 0 .75rem;
+	}
+	.bm-content {
+		padding: .75rem;
+	}
+
+	modalfooter {
+		margin-top:.75rem;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+	}
+
+	&.modal-danger {
+		background-color: var(--bs-danger-bg-subtle);
+	}
+	&.modal-warning {
+		background-color: var(--bs-warning-bg-subtle);
+	}
+	&.modal-primary {
+		background-color: var(--bs-primary-bg-subtle);
+	}
+	&.modal-info {
+		background-color: var(--bs-info-bg-subtle);
+	}
+	&.modal-ocrx-light {
+		background-color: #e0e1f5;
+	}
+}

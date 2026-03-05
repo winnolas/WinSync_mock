@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<title>Scan Medication - WinSync</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="author" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta name="description" content="">
+
+	<!-- favicon icon -->
+	<link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+	<link rel="manifest" href="img/favicon/site.webmanifest">
+
+	<!-- google fonts preconnect -->
+	<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+	<!-- Flatpickr CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+	
+	<!-- main style -->
+	<link rel="stylesheet" href="css/ocrx.min.css" />
+	
+</head>
+
+
+<body>
+	<div id="app" class="bg-content scan">
+
+		<div></div>
+
+		<main class="main-content rounded h-100">
+			<img src="img/demo-prescription-2.png" class="img-fluid position-absolute h-100 w-100" style="z-index: 0;"  alt="">
+		</main>
+
+		<footer class="main-footer bg-ocrx" style="z-index: 1;">
+			<div class="nav-footer pagination">
+				<button onclick="location.href = 'medication-info.html';">
+					<span class="material-symbols-rounded" style="">cancel</span>
+					<span>Cancel</span>
+				</button>
+				<button onclick="location.href = 'medication-info.html';">
+					<span class="material-symbols-rounded" style="">scan</span>
+					<span>Scan</span>
+				</button>
+				<button onclick="location.href = 'medication-info.html';">
+					<span class="material-symbols-rounded" style="">flash_auto</span>
+					<span>Flash</span>
+				</button>
+			</div>
+		</footer>
+
+	</div><!-- end #app -->
+
+  <!-- Flatpickr JS -->
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <!-- Flatpickr Range Plugin -->
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/plugins/rangePlugin.js"></script>
+	
+<script type="module" src="js/main.js"></script>
+
+	<script>
+		// 
+		// Flatpckr
+		// Date range picker using range plugin
+		flatpickr("#rangeInput", {
+			mode: "range",
+			plugins: [new rangePlugin({ input: "#secondInput" })],
+			dateFormat: "Y-m-d"
+		});
+	</script>
+
+</body>
+</html>

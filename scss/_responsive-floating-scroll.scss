@@ -1,0 +1,43 @@
+.scroll-wrapper {
+	position: relative;
+	padding-bottom: 0;
+	overflow: hidden;
+	z-index: 0;
+
+	.floating-scroll {
+		overflow-x: auto;
+		overflow-y: hidden;
+		padding-bottom: 8px;
+		margin-bottom: 0px;
+		scroll-behavior: smooth;
+		touch-action: auto;
+
+		&::-webkit-scrollbar {
+			height: 6px;
+			width: 6px;
+		}
+
+		&::-webkit-scrollbar-track {
+			background-color: rgba($ocrx-dark, .05);
+		}
+
+		&::-webkit-scrollbar-thumb {
+			background-color: rgba($ocrx-dark, .5);
+			border-radius: 6px;
+		}
+
+		&::-webkit-scrollbar-thumb:hover {
+			background: rgba($ocrx-primary, 1);
+		}
+
+		.floating-scroll {
+			scrollbar-width: thin;
+			scrollbar-color: rgba($ocrx-dark, 1) transparent;
+		}
+	}
+}
+
+
+.scrollable-container {
+	min-width: 1024px;
+}

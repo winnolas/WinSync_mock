@@ -1,0 +1,170 @@
+/* =====================================================
+   WIZARD CONTAINER
+===================================================== */
+
+[data-wizard-select] {
+  position: relative;
+}
+
+/* Prevent layout jump while animating */
+
+.wizard-animating {
+  overflow: hidden;
+}
+
+/* =====================================================
+   SECTION BASE
+===================================================== */
+
+.content-section {
+  position: relative;
+  width: 100%;
+}
+
+/* Prevent scroll jump */
+
+.wizard-animating {
+  overflow: hidden;
+}
+
+/* =====================================================
+   ENTER / EXIT CLASSES
+===================================================== */
+
+.section-enter {
+  animation: wizardSlideUpEnter .1s ease forwards;
+}
+
+.section-exit {
+  animation: wizardSlideUpExit .1s ease forwards;
+}
+
+/* =====================================================
+   KEYFRAMES — SLIDE UP
+===================================================== */
+
+/* Next section enters from below */
+
+@keyframes wizardSlideUpEnter {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Current section exits downward */
+
+@keyframes wizardSlideUpExit {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+}
+
+/* =====================================================
+   NAV BAR (PREV / NEXT / TRIGGER)
+===================================================== */
+
+.wizard-nav {
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  .wizard-trigger {
+    flex: 1;
+    text-align: left;
+		white-space: nowrap;
+  }
+
+}
+
+/* =====================================================
+   OFFCANVAS PICKER
+===================================================== */
+
+.wizard-picker {
+
+  width: 360px;
+  max-width: 100%;
+
+  .offcanvas-header {
+    border-bottom: 1px solid
+      rgba(255,255,255,.08);
+  }
+
+  .offcanvas-body {
+    padding: 0;
+  }
+
+}
+
+/* =====================================================
+   SEARCH BAR
+===================================================== */
+
+.wizard-search-wrap {
+  padding: 14px;
+  border-bottom: 1px solid
+    rgba(255,255,255,.08);
+}
+
+.wizard-search {
+  height: 44px;
+  font-size: 14px;
+}
+
+/* =====================================================
+   OPTIONS LIST
+===================================================== */
+
+.wizard-options {
+  max-height: 87vh;
+  overflow-y: auto;
+}
+
+/* Option item */
+
+.wizard-option {
+  padding: 16px 18px;
+  font-size: 14px;
+  cursor: pointer;
+  border-bottom: 1px solid
+    rgba(255,255,255,.06);
+  transition: all .15s ease;
+}
+
+/* Hover */
+
+.wizard-option:hover {
+  background: rgba(255,255,255,.06);
+}
+
+/* Active / selected */
+
+.wizard-option.active {
+  background: rgba(13,110,253,.18);
+  color: #fff;
+  font-weight: 500;
+}
+
+/* =====================================================
+   SCROLLBAR (OPTIONAL)
+===================================================== */
+
+.wizard-options::-webkit-scrollbar {
+  width: 6px;
+}
+
+.wizard-options::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,.2);
+  border-radius: 3px;
+}

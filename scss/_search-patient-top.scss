@@ -1,0 +1,8 @@
+.search-patient-top {
+	position: relative;
+	& > .twitter-typeahead {
+		width: 100%;
+	}
+}
+
+@import "typeahead";

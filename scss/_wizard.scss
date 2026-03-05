@@ -1,0 +1,41 @@
+.wizard-container {
+	.SelectItemHeader {
+		select.form-select::-webkit-scrollbar {
+			width: 8px;
+		}
+
+		select.form-select::-webkit-scrollbar-thumb {
+			background-color: rgba($ocrx-primary, .5);
+		}
+	
+		select.form-select::-webkit-scrollbar-track {
+			background-color: #f1f3f5;
+			box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+		}
+
+		.SelectDD { 
+			min-width: 19rem;
+			max-height: 5rem;
+			@media(max-width: 575px){
+				flex: 1 1 auto !important;
+				min-width: max-content;
+			}
+		}
+	}
+
+	.SelectItem {
+		animation: fade 0.25s ease-in-out;
+	}
+
+	@keyframes fade {
+		from {
+			opacity: 0;
+			transform: translateY(5px);
+		}
+
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+}

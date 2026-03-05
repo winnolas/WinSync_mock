@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<title>Verify Code - WinSync</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="author" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta name="description" content="">
+
+	<!-- favicon icon -->
+	<link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+	<link rel="manifest" href="img/favicon/site.webmanifest">
+
+	<!-- google fonts preconnect -->
+	<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+	<!-- main style -->
+	<link rel="stylesheet" href="css/ocrx.min.css" />
+
+</head>
+
+<body>
+	<div id="app" class="bg-ocrx">
+		<header class="main-header p-4">
+			<button type="button" class="btn p-0 d-flex gap-2 align-items-center justify-content-center fw-semibold">
+				<i class="uil uil-arrow-left fspx-25 lhpx-25 mpxt-2"></i> Back
+			</button>
+		</header>
+
+		<div></div>
+
+		<main class="main-content p-4 d-flex align-items-center start-screen">
+			<form class="pw-verify" action="#">
+				<img class="mb-5" src="img/logo-2.svg" alt="" width="75">
+				<h2 class="mb-2 fw-bold">Check your email</h2>
+				<p class="text-body-secondary mb-0">We've sent an email to <b>your***@mail.com</b></p>
+				<p class="text-body-secondary mb-5">Enter the <b>6 digit</b> code mentioned in your email</p>
+
+				<!-- <h3 class="mb-3 text-body-secondary">Enter Code</h3> -->
+				<div class="form-floating mb-3">
+					<input type="text" class="form-control form-control-lg bg-white flogin-top" id="floatingInput" placeholder="name@example.com">
+					<label for="floatingInput">Enter Code</label>
+				</div>
+				<!--
+				<div class="d-flex mb-3">
+					<input type="tel" maxlength="1" pattern="[0-9]" class="form-control">
+					<input type="tel" maxlength="1" pattern="[0-9]" class="form-control">
+					<input type="tel" maxlength="1" pattern="[0-9]" class="form-control">
+					<input type="tel" maxlength="1" pattern="[0-9]" class="form-control">
+					<input type="tel" maxlength="1" pattern="[0-9]" class="form-control">
+					<input type="tel" maxlength="1" pattern="[0-9]" class="form-control">
+				</div>
+				-->
+				<button type="button" class="btn btn-lg btn-ocrx-primary w-100 poppins mpxb-5 rounded-2 fw-semibold mb-2" onclick="location.href = 'password-reset.html';">Verify account</button>
+				<p class="py-3 w-fitcontent mx-auto">Did not received the email? <a href="#" class="link-ocrx-primary fw-semibold text-decoration-none d-block">Resend email</a></p>
+			</form>
+		</main>
+
+		<footer class="main-footer p-4 d-flex flex-row align-items-center justify-content-center">
+			<span class="text-body-secondary fspx-12 lhpx-12">WinSync ©
+				<script>document.write(new Date().getUTCFullYear());</script>
+			</span>
+		</footer>
+	</div><!-- end #app -->
+	
+<script type="module" src="js/main.js"></script>
+</body>
+
+</html>

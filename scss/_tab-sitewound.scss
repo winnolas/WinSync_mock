@@ -1,0 +1,213 @@
+@use "variables";
+
+.SiteWound-tab {
+  $ws-tab-primary: #a1c5e1;
+  $ws-tab-primary: rgba($ocrx-dark, 0.15);
+  $ws-tab-primary-active: $ocrx-dark;
+  $ws-tab-primary-active: rgba($ocrx-dark, 0.75);
+  .bg-ws-tab-active { background-color: $ws-tab-primary-active; }
+  // margin-top: 36px !important;
+
+  position: relative;
+
+  .ws-btn-remove {
+    [class^="material-symbols-"] {
+      font-size: 18px;
+      line-height: 18px;
+      font-weight: 600;
+      color: rgba($ocrx-dark, 0.9);
+      transition: all .2s ease;
+
+      &:hover {
+        color: red;
+        font-variation-settings:
+          'FILL' 1;
+        transition: all .2s ease;
+      }
+    }
+  }
+
+  &__label {
+    background-color: $ws-tab-primary;
+    border-bottom: 1px solid #fff;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5px;
+
+    font-weight: 600;
+    padding: 8px 14px;
+    color: $ocrx-dark;
+    width: 6rem;
+    text-wrap: nowrap;
+    margin-bottom: -1px;
+    transition: color 0.2s ease, background-color 0.2s ease;
+
+
+    position: absolute;
+    top: -37px;
+
+    > div {
+      // font-size: 1.1rem;
+      // line-height: 1.1rem;
+      padding: 0;
+    }
+
+    a.ws-btn-remove {
+      margin-bottom:-4.5px;
+      margin-right:-0px;
+      [class^="material-symbols-"] {
+        font-size: 16px !important;
+        line-height: 16px !important;
+        font-weight: 500;
+        color: rgba($ocrx-dark, 0.9);
+        transition: all .2s ease;
+
+
+        &:hover {
+          color: red;
+          font-variation-settings:
+            'FILL' 1;
+          transition: all .2s ease;
+        }
+      }
+    }
+
+    &:hover {
+      color: #fff;
+      background-color: $ws-tab-primary-active;
+      transition: color 0.2s ease, background-color 0.2s ease;
+      a.ws-btn-remove {
+        [class^="material-symbols-"] {
+          color: rgba(#fff, 0.9);
+          transition: all .2s ease;
+        }
+      }
+    }
+  }
+
+  &__input {
+    display: none;
+
+    &:checked {
+      +.SiteWound-tab__label {
+        background-color: $ws-tab-primary-active;
+        color: #fff;
+        font-weight: 600;
+        margin-bottom: -1px;
+        a.ws-btn-remove {
+          [class^="material-symbols-"] {
+            color: rgba(#fff, 0.9);
+          }
+        }
+      }
+
+      +.SiteWound-tab__label+.SiteWound-tab__content {
+        position: relative;
+        height: auto;
+        display: block;
+        width: 100%;
+        opacity:1;
+        padding: 1.5rem;
+        transition: display .1s ease, opacity .1s ease;
+      }
+    }
+
+    $SiteTab-start-left: 6rem;
+    $SiteTab-increment: calc(6rem + 3px);
+    $SiteTab-tabs: 20;
+
+    @for $i from 1 through $SiteTab-tabs {
+      &#SiteTab-#{$i}+.SiteWound-tab__label {
+        left: calc(#{$SiteTab-start-left} + ($SiteTab-increment * ($i - 2)));
+      }
+    }
+
+    @for $i from 1 through $SiteTab-tabs {
+      &#SiteTab-Hospice-#{$i}+.SiteWound-tab__label {
+        left: calc(#{$SiteTab-start-left} + ($SiteTab-increment * ($i - 2)));
+      }
+    }
+
+    @for $i from 1 through $SiteTab-tabs {
+      &#SiteTab-Hha-#{$i}+.SiteWound-tab__label {
+        left: calc(#{$SiteTab-start-left} + ($SiteTab-increment * ($i - 2)));
+      }
+    }
+  }
+
+  &__title {
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    color: $ocrx-dark;
+    font-weight: 600;
+  }
+
+  &__content {
+
+    height:0;
+    padding:0;
+    margin:0;
+    position: absolute;
+
+    background-color: #ffffff;
+    border: 1px solid rgba($ocrx-dark, .5);
+    margin-top: 36px;
+    opacity: 0;
+    transition-behavior: allow-discrete;
+
+    &::-webkit-scrollbar {
+			width: 5px;
+			height: 5px;
+			margin-left: 3px;
+		}
+		&::-webkit-scrollbar-track {
+			box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+		}
+		&::-webkit-scrollbar-thumb {
+			background-color: rgba($ocrx-primary, 0.3);
+			border-radius: 8px;
+		}
+
+    &.bg-tab-gray {
+      background-color: rgba(96, 125, 139, .1);
+    }
+  }
+}
+
+
+/*Wide Screens*/
+@media (max-width: 575px) {
+  .SiteWound-tab {
+    display: flex;
+    flex-direction: column;
+    // flex-wrap: wrap;
+
+    &__label {
+      // border-right: 1px solid #fff;
+      // display: inline-flex;
+      margin:1px 0;
+      align-items: center;
+      width: 100% !important;
+      position: relative;
+      left:0 !important;
+      top:0;
+    }
+
+    &__input:checked+.SiteWound-tab__label+.SiteWound-tab__content {
+      display: block;
+      padding: 0.5rem;
+    }
+
+    &__content {
+      margin-top: 0;
+      display: none;
+      order: 100;
+      padding: 0.5rem;
+      height: 60vh;
+      overflow-y: auto;
+    }
+  }
+}

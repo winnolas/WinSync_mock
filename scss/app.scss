@@ -1,0 +1,132 @@
+/* =========================================
+   OCRx — Date Picker Modal (one-file CSS)
+   ========================================= */
+
+/* iOS momentum scroll (keep) */
+html, body {
+    -webkit-overflow-scrolling: touch;
+}
+
+/* ---------- Modal: compact, fixed width, no seams ---------- */
+$ocrx-primary: #A44DD4;
+$ocrx-dark: #3D0A60;
+$ocrx-light: #D6C3FF;
+
+.ocrx-modal--date-compact {
+	width: 350px;
+	// background-color: #fff;
+	border-radius: 5px;
+	overflow: hidden;
+
+	.rz-calendar-header {
+		justify-content: space-between;
+		padding: .75rem;
+		background-color: $ocrx-primary;
+	}
+
+	.rz-calendar-view-container {
+		padding: 0;
+	}
+	
+	.rz-shade-default {
+		color: #fff !important;
+		// background-color: rgba($ocrx-dark, .2) !important;
+		border-radius:50% !important;
+	}
+
+	.rz-datepicker-inline {
+		border: 0;
+	}
+
+	.rz-calendar-title {
+		gap: .7em;
+	}
+
+	.rz-calendar-prev,
+	.rz-calendar-next {
+		margin-top:-1px;
+		[class*="material-symbols-"] {
+			font-size:50px;
+		}
+	}
+
+	.rz-calendar-view {
+		thead {
+			background-color: rgba($ocrx-dark, 0.1);
+			th {
+				span {
+					font-weight: 700;
+					color: rgba($ocrx-dark, 1);
+				}
+			}
+		}
+	}
+
+	.rz-calendar-view td a.rz-state-default, 
+	.rz-calendar-view td span.rz-state-default, 
+	.rz-calendar-view th a.rz-state-default, 
+	.rz-calendar-view th span.rz-state-default {
+		line-height: 1rem;
+	}
+
+	.rz-calendar-view td .rz-state-default {
+		color: $ocrx-dark;
+	}
+
+	.rz-calendar-month-dropdown,
+	.rz-calendar-year-dropdown {
+		font-size: 16px;
+    line-height: 16px;
+    display: flex;
+    justify-content: center;
+		padding: 0 8px;
+		font-weight: 600;
+		color: $ocrx-dark;
+		height: 31px;
+	}
+
+	.rz-calendar-month-dropdown {
+		width: 8em;
+	}
+
+	.rz-calendar-year-dropdown {
+		width: 6em;
+		color: $ocrx-primary;
+	}
+
+
+	.rz-datepicker {
+		border-radius: 0;
+	}
+
+	.rz-calendar-view td .rz-state-active.rz-state-focused, 
+	.rz-calendar-view td .rz-state-active:hover, 
+	.rz-calendar-view td .rz-state-active.rz-calendar-today.rz-state-focused, 
+	.rz-calendar-view td .rz-state-active.rz-calendar-today:hover {
+		background-color: rgba($ocrx-primary, 1) !important;
+	}
+ 	
+	.rz-calendar-view td .rz-state-default.rz-state-focused,
+	.rz-calendar-view td .rz-state-default:hover {
+		text-decoration: none;
+		color: $ocrx-dark;
+		background-color:rgba(#e6e6e6, 1);
+		cursor: pointer;
+	}
+
+	.rz-calendar-view td .rz-state-default.rz-calendar-today {
+		box-shadow: unset;
+		background-color:rgba($ocrx-primary, 1);
+		border: 2px solid rgba($ocrx-primary, 1);
+		color: #fff;
+		line-height: .8rem;
+	}
+
+	.ws-date-footer {
+		display: flex;
+		padding: .75rem;
+		gap: .75rem;
+		border-top: 1px solid rgba(#000, 0.1);
+		background-color: #fff;
+	}
+}

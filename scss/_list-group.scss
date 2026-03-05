@@ -1,0 +1,63 @@
+.list-ocrx,
+.list-ocrx-link {
+	a {
+		text-decoration: none;
+	}
+	--bs-border-color: #c8cccf;
+	li:nth-child(even) {
+		background-color: #EFF0F8;
+		.btn-outline-ocrx-dark {
+			background-color: $white;
+			&:hover {
+				background-color: $ocrx-dark;
+				color: $white;
+			}
+		}
+	}
+}
+
+.list-ocrx-link {
+	li {
+		padding:0;
+		&:hover,
+		&:focus,
+		&:active {
+			background-color: rgba($ocrx-dark, 0.01);
+			transition: background-color .1s ease-in-out;
+		}
+	}
+	a {
+		padding: 13px;
+		text-decoration: none;
+		color: $ocrx-dark;
+		transition: color .1s ease-in-out;
+		&:hover,
+		&:focus,
+		&:active {
+			background-color: rgba($ocrx-dark, 0.02);
+			color: $ocrx-primary;
+			transition: color .1s ease-in-out;
+		}
+	}
+}
+
+.list-medication {
+	--bs-border-color: #5f676d;
+	a {
+		text-decoration: none;
+	}
+	li.list-group-item {
+		border:0;
+		border-bottom: 1px solid #d9dfe4;
+	}
+	li:nth-child(even) {
+		background-color: rgba($ocrx-dark, 0.02);
+		.btn-outline-ocrx-dark {
+			background-color: $white;
+			&:hover {
+				background-color: $ocrx-dark;
+				color: $white;
+			}
+		}
+	}
+}

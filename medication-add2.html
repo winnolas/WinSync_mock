@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<title>Add Medication - WinSync</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="author" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta name="description" content="">
+
+	<!-- favicon icon -->
+	<link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+	<link rel="manifest" href="img/favicon/site.webmanifest">
+
+	<!-- google fonts preconnect -->
+	<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+	<!-- Flatpickr CSS -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+
+	<!-- main style -->
+	<link rel="stylesheet" href="css/ocrx.min.css" />
+
+</head>
+
+<body>
+	<div id="app" class="bg-content">
+		<!-- Page Name: PatientMedicationProfile -->
+		<header class="main-header p-2"><button type="button" class="btn p-0 wpx-40 hpx-40 d-flex align-items-center justify-content-center"><i
+					class="uil uil-arrow-left fspx-30 lhpx-30 mpxs-n-1"></i></button>
+
+			<div class="text-ocrx-dark d-flex flex-wrap gap-2">
+				<h2 class="m-0 fs-6 fw-bold">Medication Profile</h2>
+				
+				<div class="fspx-10 lhpx-10 fw-600 rounded-1 btn btn-outline-ocrx-dark ppxx-3 ppxy-2 w-mincontent">Beta</div>
+			</div>
+
+			
+			<div class="wpx-40"></div>
+		</header>
+		<div></div>
+		<main class="main-content mx-2 rounded">
+			<div class="card p-3 d-flex flex-column gap-0 mb-2 bg-ocrx-card">
+				<div class="d-flex flex-row gap-2 align-items-center  ppxe-30">
+					<a href="#" class="d-block link-body-emphasis text-decoration-none"><img alt="" width="50" height="50" class="rounded-circle" src="/patient/default/photo.png"></a>
+					<div>
+						<h2 class="m-0 mb-0 fs-5 fw-bold text-ocrx-dark">DOE (DEMO), ANGELA</h2>
+						<div class="fspx-12 lhpx-16 text-body-secondary"><b>Medication Profile</b> - 10/21/2025</div>
+					</div>
+					<button class="btn btn-outline-ocrx-primary p-0 m-0 border-0 hpx-24 wpx-24 d-flex justify-content-center align-items-center position-absolute" style="top:.8rem; right: .8rem;">
+						<span class="material-symbols-rounded fspx-22 fw-600">print</span>
+					</button>
+				</div>
+
+				<hr>
+
+				<div class="d-flex flex-column gap-1">
+					<h3 class="m-0 mb-0 fspx-14 fw-bold text-ocrx-dark d-flex flex-column gap-1 mb-2">DR DOE (DEMO), BEAUFORD
+						<span class="fspx-10 fw-400 text-uppercase text-body-secondary">Physician</span>
+					</h3>
+					<div class="d-grid grid-auto-col">
+						<div class="fspx-12 lhpx-14 text-body-primary d-flex flex-column gap-1"><span class="fw-600">(123) 456-7890</span>
+							<span class="fspx-10 fw-400 text-uppercase">Phone</span>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			
+			<nav class="mpxb-n-2">
+				<div class="nav nav-tabs nav-ocrx" id="nav-tab" role="tablist"><button class="nav-link fspx-15 fw-600 active" id="nav-med-tab" data-bs-toggle="tab" data-bs-target="#nav-med" type="button" role="tab"
+						aria-controls="nav-med" aria-selected="true">Medication</button>
+					<button class="nav-link fspx-15 fw-600" id="nav-discontinue-tab" data-bs-toggle="tab" data-bs-target="#nav-discontinue" type="button" role="tab" aria-controls="nav-discontinue"
+						aria-selected="false">Discontinued</button>
+					<button class="nav-link fspx-15 fw-600" id="nav-other-tab" data-bs-toggle="tab" data-bs-target="#nav-other" type="button" role="tab" aria-controls="nav-other" aria-selected="false">Other</button>
+				</div>
+			</nav>
+
+			<div class="tab-content bg-white" id="nav-tabContent">
+				<div class="tab-pane fade show active" id="nav-med" role="tabpanel" aria-labelledby="nav-med-tab" tabindex="0">
+					<div class="bg-white rounded p-2">
+						<div class="card rounded p-4 d-flex align-items-center justify-content-center hpx-200"><span class="fspx-18 text-body-tertiary">No items available</span></div>
+					</div>
+				</div>
+				<div class="tab-pane fade" id="nav-discontinue" role="tabpanel" aria-labelledby="nav-discontinue-tab" tabindex="0">
+					<div class="bg-white rounded p-2">
+						<div class="card rounded p-4 d-flex align-items-center justify-content-center hpx-200"><span class="fspx-18 text-body-tertiary">No items available</span></div>
+					</div>
+				</div>
+				<div class="tab-pane fade" id="nav-other" role="tabpanel" aria-labelledby="nav-other-tab" tabindex="0">
+					<div class="p-3 fspx-13">
+						<h4 class="mb-1 fspx-16 fw-700 text-ocrx-dark">Allergies</h4>
+						
+						<div class="mb-2 fspx-12">(Drug, Food, Latex, Environment)</div>
+						<div class="mb-3"><textarea style="text-transform: uppercase; " rows="3" name="Value" class="form-control rounded-1" _bl_71e67925-2db0-4743-8651-59024b687fbe=""></textarea></div>
+
+						<hr class="my-4">
+
+						
+						<h4 class="mb-2 fspx-16 fw-700 text-ocrx-dark">Oxygen</h4>
+
+						<label for="O2LpmControl" class="form-label fw-600">Oxygen at</label>
+						<input id="O2LpmControl" style="text-transform: uppercase; " name="Value" class="form-control rounded-1 mb-3" _bl_4b9d68b4-c1ff-4d79-b856-aac89ac30eb3="">
+
+						<label for="text" class="form-label fw-600">Liter Per Minute via:</label>
+						<div class="d-flex flex-row gap-1 align-items-center mb-3">
+							<div class="form-check form-check-inline d-flex flex-row align-items-center gap-1"><input class="form-check-input hpx-18 wpx-18 mpxe-5 mpxt-n-1" type="checkbox" id="O2ViaNcControl">
+								<label class="form-check-label" for="O2ViaNcControl">Nassal Canula</label>
+							</div>
+							<div class="form-check form-check-inline d-flex flex-row align-items-center gap-1"><input class="form-check-input hpx-18 wpx-18 mpxe-5 mpxt-n-1" type="checkbox" id="O2ViaMaskControl">
+								<label class="form-check-label" for="O2ViaMaskControl">Mask</label>
+							</div>
+							<div class="form-check form-check-inline d-flex flex-row align-items-center gap-1"><input class="form-check-input hpx-18 wpx-18 mpxe-5 mpxt-n-1" type="checkbox" id="O2ViaVentControl">
+								<label class="form-check-label" for="O2ViaVentControl">Ventilator</label>
+							</div>
+						</div>
+
+						<label for="text" class="form-label fw-600">Frequency:</label>
+						<div class="d-flex flex-row gap-1 align-items-center">
+							<div class="form-check form-check-inline d-flex flex-row align-items-center gap-1"><input class="form-check-input hpx-18 wpx-18 mpxe-5 mpxt-n-1" type="checkbox" id="O2ViaPrnControl">
+								<label class="form-check-label" for="O2ViaPrnControl">As Needed</label>
+							</div>
+							<div class="form-check form-check-inline d-flex flex-row align-items-center gap-1"><input class="form-check-input hpx-18 wpx-18 mpxe-5 mpxt-n-1" type="checkbox" id="O2ViaContinuosControl">
+								<label class="form-check-label" for="O2ViaContinuosControl">Continuous</label>
+							</div>
+							<div class="form-check form-check-inline d-flex flex-row align-items-center gap-1"><input class="form-check-input hpx-18 wpx-18 mpxe-5 mpxt-n-1" type="checkbox" id="O2ViaHsControl">
+								<label class="form-check-label" for="O2ViaHsControl">At Bedtime</label>
+							</div>
+						</div>
+
+						<hr class="my-4">
+
+						
+						<h4 class="mb-2 fspx-16 fw-700 text-ocrx-dark">Pharmacy</h4>
+
+						<label for="PharmacyNameControl" class="form-label fw-600">Name</label>
+						<input id="PharmacyNameControl" style="text-transform: uppercase; " name="Value" class="form-control rounded-1 mb-3" _bl_24a6366d-54e1-4fc4-9e92-3f01ee9bb5cf="">
+
+						<label for="PharmacyAddressControl" class="form-label fw-600">Address</label>
+						<textarea id="PharmacyAddressControl" style="text-transform: uppercase; " rows="3" name="Value" class="form-control rounded-1 mb-3"
+							_bl_00417977-0eb2-41f5-a3de-08b3e9925b5b=""></textarea>
+
+						<label for="PharmacyPhoneControl" class="form-label fw-600">Phone/Fax</label>
+						<input id="PharmacyPhoneControl" style="text-transform: uppercase; " name="Value" class="form-control rounded-1 mb-3" _bl_8206f467-7008-40dd-a59f-095dece7cdbd="">
+
+
+						
+						<p class="mb-0 text-body-tertiary">With my signature, I have performed a medication review of all medications the patient is currently using in order to identify any potential adverse effects and drug
+							reactions, including ineffective drug therapy, significant side effects, significant drug interactions, duplicate drug therapy, and noncompliance with drug therapy.</p>
+					</div>
+				</div>
+			</div>
+		</main>
+		<footer class="main-footer">
+			<div class="nav-footer">
+				<!-- <button><span class="material-symbols-outlined" style="">print</span><span style="">Print</span></button> -->
+				<button><span class="material-symbols-outlined" style="">remove_selection</span><span style="">Delete</span></button>
+				<button><span class="material-symbols-outlined" style="">note_add</span><span style="">Attach PDF</span></button>
+				<button><span class="material-symbols-outlined" style="">add_photo_alternate</span><span style="">Attach Image</span></button>
+				<button><span class="material-symbols-outlined" style="">document_scanner</span><span style="">Scan Medication</span></button>
+				<button><span class="material-symbols-outlined" style="">check_circle</span><span style="">Save</span></button>
+				<button><span class="material-symbols-outlined" style="">done_outline</span><span style="">Submit</span></button>
+			</div>
+		</footer>
+		<div class="offcanvas offcanvas-bottom" tabindex="-1" id="more-menu" aria-labelledby="more-menu" style="max-height:12vh;" data-bs-theme="dark">
+			<div class="offcanvas-header">
+				<h5 class="offcanvas-title fs-6 fw-600 text-ocrx-light" id="more-menu">More</h5>
+				<button type="button" class="btn-close text-ocrx-light hpx-20 wpx-20" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+			</div>
+			<div class="offcanvas-body small pt-0">
+				<div class="d-grid gcol-2 gap-2"><button class="btn btn-sm btn-ocrx-primary d-flex align-items-center justify-content-center gap-2"><span class="material-symbols-rounded">attachment</span>
+						Attach
+					</button></div>
+			</div>
+		</div>
+		<blazor-focus-on-navigate selector="h1"></blazor-focus-on-navigate>
+	</div>
+
+	<div id="blazor-error-ui" style="display: none;">
+		<p>An unhandled error has occurred. This application may no longer respond until reloaded.</p>
+		<a href="" class="reload">Reload</a>
+		<a class="dismiss" aria-label="Close error overlay">✖</a>
+	</div>
+
+	<script src="_framework/blazor.webview.js" autostart="false"></script>
+	<script src="_content/Blazored.Typeahead/blazored-typeahead.js"></script>
+	<script src="./bootstrap/dist/js/bootstrap.bundle.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/corejs-typeahead/1.3.1/typeahead.bundle.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+	<script type="module" src="./js/datePicker.js"></script>
+	<script src="./js/patientSearch.js"></script>
+	<script src="./js/main.js"></script>
+	<script src="./js/CommonController.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<title>WinSync</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="author" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta name="description" content="">
+
+	<!-- favicon icon -->
+	<link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+	<link rel="manifest" href="img/favicon/site.webmanifest">
+
+	<!-- google fonts preconnect -->
+	<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+	<!-- main style -->
+	<link rel="stylesheet" href="css/ocrx.min.css" />
+</head>
+
+
+<body>
+	<div id="app" class="bg-content">
+		<header class="main-header p-2">
+
+			<div class="wpx-40">
+				<button type="button" class="btn p-0 wpx-40 hpx-40 d-flex align-items-center justify-content-center" onclick="location.href = 'carevisits.html';">
+					<i class="uil uil-arrow-left fspx-30 lhpx-30 mpxs-n-1"></i>
+				</button>
+			</div>
+
+			<div class="text-ocrx-dark d-flex flex-wrap gap-2">
+				<h2 class="m-0 fs-6 fw-bold">Medication Profile</h2>
+				<div class="fspx-10 lhpx-10 fw-600 rounded-1 btn btn-outline-ocrx-dark ppxx-3 ppxy-2 w-mincontent">Beta</div>
+				<!-- <small class="d-flex flex-row gap-1 text-body-secondary fw-medium align-items-center">
+					<div class="material-symbols-outlined fill fspx-14 lhpx-14 mpxt-n-1">calendar_month</div>
+					<div>07/07/2025</div>
+				</small> -->
+			</div>
+
+			<div class="ms-auto d-flex flex-row justify-content-end gap-2">
+				<!-- <button type="button" class="btn p-0 wpx-40 hpx-40 d-flex align-items-center justify-content-center position-relative">
+					<i class="uil uil-bell fspx-30 lhpx-30 mpxs-n-1"></i>
+					<span class="position-absolute translate-middle bg-danger border border-light rounded-circle hpx-15 wpx-15" style="top:10px; right:-5px;">
+						<span class="visually-hidden"></span>
+					</span>
+				</button> -->
+
+				<button type="button" class="btn p-0 wpx-40 hpx-40 d-flex align-items-center justify-content-center position-relative" data-bs-toggle="dropdown" aria-expanded="false">
+					<span class="material-symbols-rounded fspx-30 lhpx-30 ">more_vert</span>
+				</button>
+				<ul class="dropdown-menu p-0">
+					<li>
+						<a class="dropdown-item d-flex flex-row align-items-center gap-2 fspx-13 lhpx-13 fw-500 ppx-10" href="switchagency.html">
+							<i class="uil uil-clinic-medical fspx-18 lhpx-18"></i>
+							<span>Swtich Agency</span>
+						</a>
+					</li>
+					<li>
+						<hr class="dropdown-divider m-0">
+					</li>
+					<li>
+						<a class="dropdown-item d-flex flex-row align-items-center gap-2 fspx-13 lhpx-13 fw-500 ppx-10" href="#">
+							<i class="uil uil-signout fspx-18 lhpx-18"></i>
+							<span>Log Out</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+			
+		</header>
+
+		<div></div>
+
+		<main class="main-content mx-2 rounded">
+			<div class="card p-3 d-flex flex-column gap-3 mb-3 bg-ocrx-card">
+				<a href="#" class="d-block link-body-emphasis text-decoration-none">
+					<img src="./img/profile/profile-1.png" alt="" width="50" height="50" class="rounded-circle">
+				</a>
+				<div>
+					<h2 class="m-0 mb-1 fs-5 fw-bold text-ocrx-dark">Guillermo Acevedo Rivera</h2>
+					<div class="fspx-12 lhpx-16 text-body-secondary"><b>Medication Profile</b></div>
+				</div>
+			</div>
+
+					<div class="bg-white rounded p-2">
+						<div class="card rounded p-4 d-flex align-items-center justify-content-center hpx-200">
+							<span class="fspx-18 text-body-tertiary">No items available</span>
+						</div>
+					</div>
+
+			
+
+		</main>
+
+
+
+	</div><!-- end #app -->
+<script type="module" src="js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,217 @@
+﻿<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="author" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta name="description" content="">
+
+	<!-- favicon icon -->
+	<link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+	<link rel="manifest" href="img/favicon/site.webmanifest">
+
+	<!-- google fonts preconnect -->
+	<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+	<!-- main style -->
+	<link rel="stylesheet" href="css/ocrx.min.css">
+</head>
+
+  <body class="app-bg">
+    <nav class="navbar sticky-top border-bottom" style="backdrop-filter: blur(6px); background: rgba(0,0,0,.35);">
+      <div class="container" style="max-width: var(--app-max)">
+        <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+          <i class="bi bi-magic"></i>
+          <span class="fw-semibold">Prompt UI</span>
+          <span class="badge text-bg-dark border ms-2"><i class="bi bi-circle-fill me-2" style="font-size:.55rem;color:#38bdf8"></i>Ready</span>
+        </a>
+        <div class="ms-auto d-flex align-items-center gap-2">
+          <button class="btn btn-sm btn-outline-secondary" data-bs-toggle="offcanvas" data-bs-target="#settings"><i class="bi bi-sliders"></i> <span class="d-none d-md-inline">Settings</span></button>
+        </div>
+      </div>
+    </nav>
+
+    <main class="container my-4" style="max-width: var(--app-max)">
+      <!-- Thread Panel -->
+      <div class="panel p-0 shadow-lg">
+        <div class="thread p-3" id="thread">
+          <div class="bubble assistant">
+            <div class="fw-semibold mb-1"><i class="bi bi-robot me-1"></i>Assistant</div>
+            <div>Say anything to start — I’ll show the animated <em>Analyzing…</em> overlay while processing.</div>
+          </div>
+        </div>
+        <div class="divider"></div>
+        <!-- Composer -->
+        <form id="composer" class="p-3" autocomplete="off">
+          <div class="input-group">
+            <span class="input-group-text"><i class="bi bi-chat-square-text"></i></span>
+            <input id="prompt" class="form-control" placeholder="Type your prompt…" maxlength="4000" />
+            <button class="btn btn-primary" id="sendBtn" type="submit">
+              <span class="d-none d-sm-inline">Send</span>
+              <i class="bi bi-send d-sm-none"></i>
+            </button>
+          </div>
+          <div class="d-flex justify-content-between mt-2 small text-secondary">
+            <div><span class="text-kbd">Enter</span> to send · <span class="text-kbd">Shift</span> + <span class="text-kbd">Enter</span> for newline</div>
+            <div id="charCounter">0 / 4000</div>
+          </div>
+        </form>
+      </div>
+
+      <p class="text-center text-secondary small mt-3 mb-0">Dark-mode Bootstrap · SCSS animations · Overlay while processing</p>
+    </main>
+
+    <!-- Settings Offcanvas -->
+    <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="settings" aria-labelledby="settingsLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="settingsLabel"><i class="bi bi-sliders me-2"></i>Settings</h5>
+        <button class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body small">
+        <div class="mb-3">
+          <label class="form-label">Model</label>
+          <select id="model" class="form-select">
+            <option selected>gpt-4o-mini</option>
+            <option>gpt-4.1</option>
+            <option>gpt-5</option>
+          </select>
+        </div>
+        <div class="row g-2">
+          <div class="col-6">
+            <label class="form-label">Temperature</label>
+            <input type="range" id="temperature" class="form-range" min="0" max="2" step="0.1" value="0.7" />
+            <div class="form-text">Current: <span id="tempVal">0.7</span></div>
+          </div>
+          <div class="col-6">
+            <label class="form-label">Max tokens</label>
+            <input type="number" id="maxTokens" class="form-control" min="1" max="8192" value="1024" />
+          </div>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Top‑p</label>
+          <input type="number" id="topP" class="form-control" min="0" max="1" step="0.05" value="1" />
+        </div>
+        <div class="mb-3">
+          <label class="form-label">API key</label>
+          <input type="password" id="apiKey" class="form-control" placeholder="sk-…" autocomplete="off" />
+          <div class="form-text">Stored only in your browser (localStorage).</div>
+        </div>
+        <div class="form-check form-switch mb-3">
+          <input class="form-check-input" type="checkbox" id="streaming" checked />
+          <label class="form-check-label" for="streaming">Stream responses</label>
+        </div>
+        <button id="saveSettings" class="btn btn-primary w-100"><i class="bi bi-save me-1"></i>Save</button>
+      </div>
+    </div>
+
+    <!-- Analyzing Overlay (shown while waiting) -->
+    <div id="analyzing" class="analyzing-overlay d-none">
+      <div class="layer grid"></div>
+      <div class="layer d-flex align-items-center justify-content-center">
+        <div class="scanline w-100"></div>
+      </div>
+      <div class="d-flex flex-column align-items-center">
+        <div class="pulse"></div>
+        <div class="title"><span class="shine">Analyzing…</span></div>
+        <div class="subtitle">Processing your prompt</div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      const promptEl = document.getElementById('prompt');
+      const threadEl = document.getElementById('thread');
+      const composerEl = document.getElementById('composer');
+      const analyzing = document.getElementById('analyzing');
+      const charCounter = document.getElementById('charCounter');
+      const tempEl = document.getElementById('temperature');
+      const tempValEl = document.getElementById('tempVal');
+
+      // Prefs save/load
+      function savePrefs(){
+        const prefs={
+          model: document.getElementById('model').value,
+          temperature: Number(document.getElementById('temperature').value||0.7),
+          maxTokens: Number(document.getElementById('maxTokens').value||1024),
+          topP: Number(document.getElementById('topP').value||1),
+          streaming: document.getElementById('streaming').checked,
+          apiKey: document.getElementById('apiKey').value||''
+        };
+        localStorage.setItem('promptUI:prefs', JSON.stringify(prefs));
+        return prefs;
+      }
+      function loadPrefs(){
+        try{const p=JSON.parse(localStorage.getItem('promptUI:prefs'))||{};
+          if(p.model) document.getElementById('model').value=p.model;
+          if(typeof p.temperature==='number') document.getElementById('temperature').value=p.temperature;
+          if(p.maxTokens) document.getElementById('maxTokens').value=p.maxTokens;
+          if(typeof p.topP==='number') document.getElementById('topP').value=p.topP;
+          if(typeof p.streaming==='boolean') document.getElementById('streaming').checked=p.streaming;
+          if(p.apiKey) document.getElementById('apiKey').value=p.apiKey;
+          tempValEl.textContent=document.getElementById('temperature').value;
+        }catch(e){}
+      }
+
+      document.getElementById('saveSettings').addEventListener('click',()=>{
+        savePrefs();
+        const oc=bootstrap.Offcanvas.getOrCreateInstance('#settings');
+        oc.hide();
+      });
+
+      // Char counter
+      promptEl.addEventListener('input',()=>{
+        charCounter.textContent = `${promptEl.value.length} / ${promptEl.maxLength}`;
+      });
+
+      tempEl.addEventListener('input',()=> tempValEl.textContent=tempEl.value);
+
+      // Helpers
+      function escapeHtml(str){return str.replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;','\'':'&#39;'}[m]))}
+      function addMessage(role,text){
+        const div=document.createElement('div');
+        div.className=`bubble ${role} ${role==='user'?'ms-auto':''}`;
+        div.innerHTML=`<div class="fw-semibold mb-1">${role==='user'?'<i class="bi bi-person me-1"></i>You':'<i class="bi bi-robot me-1"></i>Assistant'}</div>
+          <div class="preserve">${escapeHtml(text).replace(/\n/g,'<br>')}</div>`;
+        threadEl.appendChild(div);
+        threadEl.scrollTop=threadEl.scrollHeight;
+      }
+
+      // Overlay control
+      function showAnalyzing(){ analyzing.classList.remove('d-none'); }
+      function hideAnalyzing(){ analyzing.classList.add('d-none'); }
+
+      // Mock: replace with real OpenAI call later
+      async function fakeCall(text){
+        showAnalyzing();
+        await new Promise(r=>setTimeout(r,1800));
+        hideAnalyzing();
+        addMessage('assistant', `You said: ${text}`);
+      }
+
+      composerEl.addEventListener('keydown',(e)=>{
+        if(e.key==='Enter' && !e.shiftKey){ e.preventDefault(); document.getElementById('sendBtn').click(); }
+      });
+
+      composerEl.addEventListener('submit', async (e)=>{
+        e.preventDefault();
+        const text=promptEl.value.trim();
+        if(!text) return;
+        addMessage('user', text);
+        promptEl.value=''; promptEl.dispatchEvent(new Event('input'));
+        const prefs = savePrefs();
+        // TODO: use prefs for real API call
+        await fakeCall(text);
+      });
+
+      // Init
+      loadPrefs();
+      charCounter.textContent=`0 / ${promptEl.maxLength}`;
+    </script>
+  </body>
+
+</html>

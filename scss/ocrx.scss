@@ -1,0 +1,73 @@
+@import url("https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css");
+
+// 1.
+@import "../node_modules/bootstrap/scss/functions";
+@import "../node_modules/bootstrap/scss/variables";
+
+$theme-colors: map-merge(
+	$theme-colors,
+	(
+		"ocrx-primary": #A44DD4,
+		"ocrx-dark": #3D0A60,
+		"ocrx-light": #D6C3FF
+	)
+);
+
+$ocrx-bgHover: #A44DD4;
+
+$dropdown-link-hover-bg: $ocrx-bgHover;
+$dropdown-link-hover-color: #fff;
+
+$dropdown-link-active-bg: $ocrx-bgHover;
+$dropdown-link-active-color: #fff;
+
+$list-group-active-bg: $ocrx-bgHover;
+$list-group-active-border-color: $ocrx-bgHover;
+$list-group-active-color: #fff;
+
+$nav-pills-link-active-bg: $ocrx-bgHover;
+$nav-pills-link-active-color: #fff;
+		
+// Customize the focus color globally
+$focus-ring-width: 0.25rem;
+$focus-ring-opacity: 0.5;
+$focus-ring-color: rgba(255, 0, 0, 0.5); // red
+$focus-ring-blur: 0;
+$focus-ring-box-shadow: 0 0 0 $focus-ring-width $focus-ring-color;
+
+// 2.
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+// Custom styles
+@import "icon-list";
+@import "fonts";
+@import "unicons";
+@import "variables";
+@import "utilities";
+@import "base";
+@import "login";
+@import "verify-code";
+@import "main-header";
+@import "main-content";
+@import "main-footer";
+@import "credits-licenses";
+
+@import "alert";
+@import "btn";
+@import "flatpickr-daterange";
+@import "form-elements";
+@import "form-floating";
+@import "list-group";
+@import "loader";
+@import "modal";
+@import "range-slider";
+@import "responsive-floating-scroll";
+@import "search-patient-top";
+@import "tabs";
+@import "tab-mist-therapy";
+@import "tab-sitewound";
+@import "tab-sitewound-wcTabAcc";
+@import "tab-sitewound-inner";
+// @import "tab-visits";
+@import "wizard";
+@import "wizard-offcanvas";

@@ -1,0 +1,502 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<title>WinSync</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="author" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta name="description" content="">
+
+	<!-- favicon icon -->
+	<link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+	<link rel="manifest" href="img/favicon/site.webmanifest">
+
+	<!-- google fonts preconnect -->
+	<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+	<!-- main style -->
+	<link rel="stylesheet" href="css/ocrx.min.css" />
+</head>
+
+<body>
+	<div id="app" class="bg-content">
+		<header class="main-header p-2">
+			<div class="text-ocrx-dark d-flex flex-row gap-2">
+				<!-- 
+				<a href="#" class="d-block link-body-emphasis text-decoration-none">
+					<img src="./img/logo-2.svg" alt="" width="35" height="35">
+				</a> 
+				-->
+				<div class="d-flex flex-column justify-content-center">
+					<h2 class="my-0 d-flex align-items-center gap-2 fw-700" style="line-height:1.3;">
+						<span class="fs-6 fw-bold">Submitted Task</span>
+						<span class="badge rounded-pill bg-ocrx-light text-danger-emphasis fspx-11 lhpx-16">1,000</span>
+					</h2>
+					<div class="fspx-12 lhpx-14 fw-500">ATTH (ATTH)</div>
+				</div>
+			</div>
+
+			<div class="ms-auto d-flex flex-row justify-content-end gap-2">
+				<!-- <button type="button" class="btn p-0 wpx-40 hpx-40 d-flex align-items-center justify-content-center position-relative">
+					<i class="uil uil-bell fspx-30 lhpx-30 mpxs-n-1"></i>
+					<span class="position-absolute translate-middle bg-danger border border-light rounded-circle hpx-15 wpx-15" style="top:10px; right:-5px;">
+						<span class="visually-hidden"></span>
+					</span>
+				</button> -->
+
+				<button type="button" class="btn p-0 wpx-40 hpx-40 d-flex align-items-center justify-content-center position-relative" data-bs-toggle="dropdown" aria-expanded="false">
+					<span class="material-symbols-rounded fspx-30 lhpx-30 ">more_vert</span>
+				</button>
+				<ul class="dropdown-menu p-0">
+					<li>
+						<a class="dropdown-item d-flex flex-row align-items-center gap-2 fspx-13 lhpx-13 fw-500 ppx-10" href="switchagency.html">
+							<i class="uil uil-clinic-medical fspx-18 lhpx-18"></i>
+							<span>Swtich Agency</span>
+						</a>
+					</li>
+					<li>
+						<hr class="dropdown-divider m-0">
+					</li>
+					<li>
+						<a class="dropdown-item d-flex flex-row align-items-center gap-2 fspx-13 lhpx-13 fw-500 ppx-10" href="#">
+							<i class="uil uil-signout fspx-18 lhpx-18"></i>
+							<span>Log Out</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+
+		</header>
+
+		<!-- 
+		<div class="search-patient-top p-2">
+      <input
+        type="text"
+        id="search-patient-top"
+        class="form-control rounded fw-500"
+        placeholder="Search Patient Name . . ."
+        autocomplete="off"
+      />
+		</div>
+		-->
+
+		<div class="search-patient-top position-relative p-2">
+			<input
+				type="text"
+				id="search-patient-top"
+				class="form-control rounded fw-500 pe-5"
+				placeholder="Search Patient Name . . ."
+				autocomplete="off"
+			/>
+			<button
+				id="clear-search-btn"
+				type="button"
+				class="btn position-absolute ppxy-7 top-50 hpx-36 end-0 translate-middle-y me-2 align-items-center justify-content-center text-danger"
+				style="z-index: 10; display: none; background: none; border: none; font-size: 1.2rem;">
+				<span class="material-symbols-rounded fspx-22 lh-22">cancel</span>
+			</button>
+		</div>
+
+		<main class="main-content p-2 mx-2 rounded bg-body-tertiary">
+			<div>
+
+				<nav class="index mb-2">
+					<div class="nav nav-pills nav-fill gap-1" id="nav-tab" role="tablist">
+						<button class="nav-link rounded-2 active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">
+							<div class="poppins text-ocrx-dark fspx-13 lhpx-25 text-uppercase fw-800">Week</div>
+							<div class="mpxt-n- badge text-bg-ocrx-primary fspx-9 lhpx-13 hpx-20 fw-500 rounded-1">1,000</div>
+						</button>
+						<button class="nav-link rounded-2 fw-600" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">
+							<div class="poppins text-ocrx-dark fspx-13 lhpx-25 text-uppercase fw-800">14-Day</div>
+							<div class="mpxt-n- badge text-bg-ocrx-primary fspx-9 lhpx-13 hpx-20 fw-500 rounded-1">1,000</div>
+						</button>
+						<button class="nav-link rounded-2 fw-600" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">
+							<div class="poppins text-ocrx-dark fspx-13 lhpx-25 text-uppercase fw-800">30-Day</div>
+							<div class="mpxt-n- badge text-bg-ocrx-primary fspx-9 lhpx-13 hpx-20 fw-500 rounded-1">1,000</div>
+						</button>
+					</div>
+				</nav>
+				<div class="tab-content" id="nav-tabContent">
+					<div class="tab-pane fade p-0 show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab" tabindex="0">
+
+						<ul class="list-group list-ocrx pt-0">
+
+							<li class="list-group-item px-2">
+								<div class="d-flex flex-row p-2 gap-2">
+									<a href="#" class="d-block link-body-emphasis text-decoration-none">
+										<img src="./img/profile/profile-1.png" alt="" width="40" height="40" class="rounded-circle">
+									</a>
+									<div class="d-flex flex-column gap-0 justify-content-center w-100">
+										<div class="my-0 d-flex align-items-center gap-2 fw-700 fspx-15"><span>DOE (DEMO), CARLTON</span></div>
+										<small class="text-body-tertiary">
+											<div class="d-flex flex-row gap-1 align-items-center fs-13 lh-13">
+												<div class="material-symbols-outlined fspx-18 lhpx-12 fill">subject</div>
+												<div class="fw-600 fspx-11 text-truncate w-75">Lorem ipsum dolor sit amet consectetur adipisicing elit. Non enim fugit, maiores unde ipsam reprehenderit ea, rerum sequi laborum corrupti
+													accusantium? Reiciendis tempore maiores eaque beatae voluptatibus, porro odit reprehenderit.</div>
+											</div>
+										</small>
+									</div>
+								</div>
+								<hr class="hr-divider m-0 mpxb-5">
+								<div class="d-flex flex-row p-2 gap-2">
+									<div class="btn-group w-100 rounded-1" role="group" aria-label="Basic example">
+										<button type="button" class="btn btn-sm btn-outline-ocrx-dark fspx-12" onclick="location.href = 'medication-list.html';">03/17/2025</button>
+									</div>
+								</div>
+
+								<div class="position-absolute" style="top:.8rem; right: .8rem;">
+									<button class="btn rounded-circle p-0 wpx-25 hpx-25 d-flex align-items-center justify-content-center position-relative" data-bs-toggle="modal" data-bs-target="#delete-medication">
+										<span class="material-symbols-outlined fspx-20 text-danger">cancel</span>
+									</button>
+								</div>
+							</li>
+
+							<li class="list-group-item px-2">
+								<div class="d-flex flex-row p-2 gap-2">
+									<a href="#" class="d-block link-body-emphasis text-decoration-none">
+										<img src="./img/profile/profile-1.png" alt="" width="40" height="40" class="rounded-circle">
+									</a>
+									<div class="d-flex flex-column gap-0 justify-content-center w-100">
+										<div class="my-0 d-flex align-items-center gap-2 fw-700 fspx-15"><span>DOE (DEMO), CARLTON</span></div>
+										<small class="text-body-tertiary">
+											<div class="d-flex flex-row gap-1 align-items-center fs-13 lh-13">
+												<div class="material-symbols-outlined fspx-18 lhpx-12 fill">subject</div>
+												<div class="fw-600 fspx-11 text-truncate w-75">Lorem ipsum dolor sit amet consectetur adipisicing elit. Non enim fugit, maiores unde ipsam reprehenderit ea, rerum sequi laborum corrupti
+													accusantium? Reiciendis tempore maiores eaque beatae voluptatibus, porro odit reprehenderit.</div>
+											</div>
+										</small>
+									</div>
+								</div>
+								<hr class="hr-divider m-0 mpxb-5">
+								<div class="d-flex flex-row p-2 gap-2">
+									<div class="btn-group w-100 rounded-1" role="group" aria-label="Basic example">
+										<button type="button" class="btn btn-sm btn-outline-ocrx-dark fspx-12" onclick="location.href = 'medication-list.html';">03/17/2025</button>
+									</div>
+								</div>
+
+								<div class="position-absolute" style="top:.8rem; right: .8rem;">
+									<button class="btn rounded-circle p-0 wpx-25 hpx-25 d-flex align-items-center justify-content-center position-relative" data-bs-toggle="modal" data-bs-target="#delete-medication">
+										<span class="material-symbols-outlined fspx-20 text-danger">cancel</span>
+									</button>
+								</div>
+							</li>
+
+							<li class="list-group-item px-2">
+								<div class="d-flex flex-row p-2 gap-2">
+									<a href="#" class="d-block link-body-emphasis text-decoration-none">
+										<img src="./img/profile/profile-1.png" alt="" width="40" height="40" class="rounded-circle">
+									</a>
+									<div class="d-flex flex-column gap-0 justify-content-center w-100">
+										<div class="my-0 d-flex align-items-center gap-2 fw-700 fspx-15"><span>DOE (DEMO), CARLTON</span></div>
+										<small class="text-body-tertiary">
+											<div class="d-flex flex-row gap-1 align-items-center fs-13 lh-13">
+												<div class="material-symbols-outlined fspx-18 lhpx-12 fill">subject</div>
+												<div class="fw-600 fspx-11 text-truncate w-75">Lorem ipsum dolor sit amet consectetur adipisicing elit. Non enim fugit, maiores unde ipsam reprehenderit ea, rerum sequi laborum corrupti
+													accusantium? Reiciendis tempore maiores eaque beatae voluptatibus, porro odit reprehenderit.</div>
+											</div>
+										</small>
+									</div>
+								</div>
+								<hr class="hr-divider m-0 mpxb-5">
+								<div class="d-flex flex-row p-2 gap-2">
+									<div class="btn-group w-100 rounded-1" role="group" aria-label="Basic example">
+										<button type="button" class="btn btn-sm btn-outline-ocrx-dark fspx-12" onclick="location.href = 'medication-list.html';">03/17/2025</button>
+									</div>
+								</div>
+
+								<div class="position-absolute" style="top:.8rem; right: .8rem;">
+									<button class="btn rounded-circle p-0 wpx-25 hpx-25 d-flex align-items-center justify-content-center position-relative" data-bs-toggle="modal" data-bs-target="#delete-medication">
+										<span class="material-symbols-outlined fspx-20 text-danger">cancel</span>
+									</button>
+								</div>
+							</li>
+
+							<li class="list-group-item px-2">
+								<div class="d-flex flex-row p-2 gap-2">
+									<a href="#" class="d-block link-body-emphasis text-decoration-none">
+										<img src="./img/profile/profile-1.png" alt="" width="40" height="40" class="rounded-circle">
+									</a>
+									<div class="d-flex flex-column gap-0 justify-content-center w-100">
+										<div class="my-0 d-flex align-items-center gap-2 fw-700 fspx-15"><span>DOE (DEMO), CARLTON</span></div>
+										<small class="text-body-tertiary">
+											<div class="d-flex flex-row gap-1 align-items-center fs-13 lh-13">
+												<div class="material-symbols-outlined fspx-18 lhpx-12 fill">subject</div>
+												<div class="fw-600 fspx-11 text-truncate w-75">Lorem ipsum dolor sit amet consectetur adipisicing elit. Non enim fugit, maiores unde ipsam reprehenderit ea, rerum sequi laborum corrupti
+													accusantium? Reiciendis tempore maiores eaque beatae voluptatibus, porro odit reprehenderit.</div>
+											</div>
+										</small>
+									</div>
+								</div>
+								<hr class="hr-divider m-0 mpxb-5">
+								<div class="d-flex flex-row p-2 gap-2">
+									<div class="btn-group w-100 rounded-1" role="group" aria-label="Basic example">
+										<button type="button" class="btn btn-sm btn-outline-ocrx-dark fspx-12" onclick="location.href = 'medication-list.html';">03/17/2025</button>
+									</div>
+								</div>
+
+								<div class="position-absolute" style="top:.8rem; right: .8rem;">
+									<button class="btn rounded-circle p-0 wpx-25 hpx-25 d-flex align-items-center justify-content-center position-relative" data-bs-toggle="modal" data-bs-target="#delete-medication">
+										<span class="material-symbols-outlined fspx-20 text-danger">cancel</span>
+									</button>
+								</div>
+							</li>
+
+							<li class="list-group-item px-2">
+								<div class="d-flex flex-row p-2 gap-2">
+									<a href="#" class="d-block link-body-emphasis text-decoration-none">
+										<img src="./img/profile/profile-1.png" alt="" width="40" height="40" class="rounded-circle">
+									</a>
+									<div class="d-flex flex-column gap-0 justify-content-center w-100">
+										<div class="my-0 d-flex align-items-center gap-2 fw-700 fspx-15"><span>DOE (DEMO), CARLTON</span></div>
+										<small class="text-body-tertiary">
+											<div class="d-flex flex-row gap-1 align-items-center fs-13 lh-13">
+												<div class="material-symbols-outlined fspx-18 lhpx-12 fill">subject</div>
+												<div class="fw-600 fspx-11 text-truncate w-75">Lorem ipsum dolor sit amet consectetur adipisicing elit. Non enim fugit, maiores unde ipsam reprehenderit ea, rerum sequi laborum corrupti
+													accusantium? Reiciendis tempore maiores eaque beatae voluptatibus, porro odit reprehenderit.</div>
+											</div>
+										</small>
+									</div>
+								</div>
+								<hr class="hr-divider m-0 mpxb-5">
+								<div class="d-flex flex-row p-2 gap-2">
+									<div class="btn-group w-100 rounded-1" role="group" aria-label="Basic example">
+										<button type="button" class="btn btn-sm btn-outline-ocrx-dark fspx-12" onclick="location.href = 'medication-list.html';">03/17/2025</button>
+									</div>
+								</div>
+
+								<div class="position-absolute" style="top:.8rem; right: .8rem;">
+									<button class="btn rounded-circle p-0 wpx-25 hpx-25 d-flex align-items-center justify-content-center position-relative" data-bs-toggle="modal" data-bs-target="#delete-medication">
+										<span class="material-symbols-outlined fspx-20 text-danger">cancel</span>
+									</button>
+								</div>
+							</li>
+
+							<li class="list-group-item px-2">
+								<div class="d-flex flex-row p-2 gap-2">
+									<a href="#" class="d-block link-body-emphasis text-decoration-none">
+										<img src="./img/profile/profile-1.png" alt="" width="40" height="40" class="rounded-circle">
+									</a>
+									<div class="d-flex flex-column gap-0 justify-content-center w-100">
+										<div class="my-0 d-flex align-items-center gap-2 fw-700 fspx-15"><span>DOE (DEMO), CARLTON</span></div>
+										<small class="text-body-tertiary">
+											<div class="d-flex flex-row gap-1 align-items-center fs-13 lh-13">
+												<div class="material-symbols-outlined fspx-18 lhpx-12 fill">subject</div>
+												<div class="fw-600 fspx-11 text-truncate w-75">Lorem ipsum dolor sit amet consectetur adipisicing elit. Non enim fugit, maiores unde ipsam reprehenderit ea, rerum sequi laborum corrupti
+													accusantium? Reiciendis tempore maiores eaque beatae voluptatibus, porro odit reprehenderit.</div>
+											</div>
+										</small>
+									</div>
+								</div>
+								<hr class="hr-divider m-0 mpxb-5">
+								<div class="d-flex flex-row p-2 gap-2">
+									<div class="btn-group w-100 rounded-1" role="group" aria-label="Basic example">
+										<button type="button" class="btn btn-sm btn-outline-ocrx-dark fspx-12" onclick="location.href = 'medication-list.html';">03/17/2025</button>
+									</div>
+								</div>
+
+								<div class="position-absolute" style="top:.8rem; right: .8rem;">
+									<button class="btn rounded-circle p-0 wpx-25 hpx-25 d-flex align-items-center justify-content-center position-relative" data-bs-toggle="modal" data-bs-target="#delete-medication">
+										<span class="material-symbols-outlined fspx-20 text-danger">cancel</span>
+									</button>
+								</div>
+							</li>
+
+						</ul>
+
+					</div>
+
+					<div class="tab-pane fade p-0" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab" tabindex="0">
+
+						<ul class="list-group list-ocrx  pt-0">
+
+							<li class="list-group-item px-2">
+								<div class="d-flex flex-row p-2 gap-2">
+									<a href="#" class="d-block link-body-emphasis text-decoration-none">
+										<img src="./img/profile/profile-1.png" alt="" width="40" height="40" class="rounded-circle">
+									</a>
+									<div class="d-flex flex-column gap-0 justify-content-center w-100">
+										<div class="my-0 d-flex align-items-center gap-2 fw-700 fspx-15"><span>DOE (DEMO), CARLTON</span></div>
+										<small class="text-body-tertiary">
+											<div class="d-flex flex-row gap-1 align-items-center fs-13 lh-13">
+												<span divs="material-symbols-outlined fspx-14 lhpx-12 fill">calendar_month</span>
+												<span div="fw-600 fspx-13">03/17/2025</span>
+											</div>
+										</small>
+									</div>
+								</div>
+								<hr class="hr-divider m-0">
+								<div class="d-flex flex-row p-2 gap-2">
+									<div class="btn-group w-100 rounded-1" role="group" aria-label="Basic example">
+										<button type="button" class="btn btn-sm btn-outline-ocrx-dark fspx-12" onclick="location.href = 'medication-list.html';">03/17/2025</button>
+									</div>
+								</div>
+							</li>
+
+							<li class="list-group-item px-2">
+								<div class="d-flex flex-row p-2 gap-2">
+									<a href="#" class="d-block link-body-emphasis text-decoration-none">
+										<img src="./img/profile/profile-1.png" alt="" width="40" height="40" class="rounded-circle">
+									</a>
+									<div class="d-flex flex-column gap-0 justify-content-center w-100">
+										<div class="my-0 d-flex align-items-center gap-2 fw-700 fspx-15"><span>DOE (DEMO), CARLTON</span></div>
+										<small class="text-body-tertiary">
+											<div class="d-flex flex-row gap-1 align-items-center fs-13 lh-13">
+												<span divs="material-symbols-outlined fspx-14 lhpx-12 fill">calendar_month</span>
+												<span div="fw-600 fspx-13">03/17/2025</span>
+											</div>
+										</small>
+									</div>
+								</div>
+								<hr class="hr-divider m-0">
+								<div class="d-flex flex-row p-2 gap-2">
+									<div class="btn-group w-100 rounded-1" role="group" aria-label="Basic example">
+										<button type="button" class="btn btn-sm btn-outline-ocrx-dark fspx-12" onclick="location.href = 'medication-list.html';">03/17/2025</button>
+									</div>
+								</div>
+							</li>
+
+						</ul>
+
+					</div>
+
+					<div class="tab-pane fade p-0" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab" tabindex="0">
+
+						<ul class="list-group list-ocrx  pt-0">
+
+							<li class="list-group-item px-2">
+								<div class="d-flex flex-row p-2 gap-2">
+									<a href="#" class="d-block link-body-emphasis text-decoration-none">
+										<img src="./img/profile/profile-1.png" alt="" width="40" height="40" class="rounded-circle">
+									</a>
+									<div class="d-flex flex-column gap-0 justify-content-center w-100">
+										<div class="my-0 d-flex align-items-center gap-2 fw-700 fspx-15"><span>DOE (DEMO), CARLTON</span></div>
+										<small class="text-body-tertiary">
+											<div class="d-flex flex-row gap-1 align-items-center fs-13 lh-13">
+												<span divs="material-symbols-outlined fspx-14 lhpx-12 fill">calendar_month</span>
+												<span div="fw-600 fspx-13">03/17/2025</span>
+											</div>
+										</small>
+									</div>
+								</div>
+								<hr class="hr-divider m-0">
+								<div class="d-flex flex-row p-2 gap-2">
+									<div class="btn-group w-100 rounded-1" role="group" aria-label="Basic example">
+										<button type="button" class="btn btn-sm btn-outline-ocrx-dark fspx-12" onclick="location.href = 'medication-list.html';">03/17/2025</button>
+									</div>
+								</div>
+							</li>
+
+							<li class="list-group-item px-2">
+								<div class="d-flex flex-row p-2 gap-2">
+									<a href="#" class="d-block link-body-emphasis text-decoration-none">
+										<img src="./img/profile/profile-1.png" alt="" width="40" height="40" class="rounded-circle">
+									</a>
+									<div class="d-flex flex-column gap-0 justify-content-center w-100">
+										<div class="my-0 d-flex align-items-center gap-2 fw-700 fspx-15"><span>DOE (DEMO), CARLTON</span></div>
+										<small class="text-body-tertiary">
+											<div class="d-flex flex-row gap-1 align-items-center fs-13 lh-13">
+												<span divs="material-symbols-outlined fspx-14 lhpx-12 fill">calendar_month</span>
+												<span div="fw-600 fspx-13">03/17/2025</span>
+											</div>
+										</small>
+									</div>
+								</div>
+								<hr class="hr-divider m-0">
+								<div class="d-flex flex-row p-2 gap-2">
+									<div class="btn-group w-100 rounded-1" role="group" aria-label="Basic example">
+										<button type="button" class="btn btn-sm btn-outline-ocrx-dark fspx-12" onclick="location.href = 'medication-list.html';">03/17/2025</button>
+									</div>
+								</div>
+							</li>
+
+							<li class="list-group-item px-2">
+								<div class="d-flex flex-row p-2 gap-2">
+									<a href="#" class="d-block link-body-emphasis text-decoration-none">
+										<img src="./img/profile/profile-1.png" alt="" width="40" height="40" class="rounded-circle">
+									</a>
+									<div class="d-flex flex-column gap-0 justify-content-center w-100">
+										<div class="my-0 d-flex align-items-center gap-2 fw-700 fspx-15"><span>DOE (DEMO), CARLTON</span></div>
+										<small class="text-body-tertiary">
+											<div class="d-flex flex-row gap-1 align-items-center fs-13 lh-13">
+												<span divs="material-symbols-outlined fspx-14 lhpx-12 fill">calendar_month</span>
+												<span div="fw-600 fspx-13">03/17/2025</span>
+											</div>
+										</small>
+									</div>
+								</div>
+								<hr class="hr-divider m-0">
+								<div class="d-flex flex-row p-2 gap-2">
+									<div class="btn-group w-100 rounded-1" role="group" aria-label="Basic example">
+										<button type="button" class="btn btn-sm btn-outline-ocrx-dark fspx-12" onclick="location.href = 'medication-list.html';">03/17/2025</button>
+									</div>
+								</div>
+							</li>
+
+						</ul>
+
+					</div>
+				</div>
+
+			</div>
+		</main>
+
+		<footer class="main-footer">
+			<div class="nav-footer pagination">
+				<button>
+					<span class="material-symbols-rounded" style="">first_page</span>
+					<span>First</span>
+				</button>
+				<button>
+					<span class="material-symbols-rounded" style="">chevron_left</span>
+					<span>Previous</span>
+				</button>
+				<div class="page-status fspx-14 fw-500">
+					<input type="text" class="form-control text-center wpx-70 fspx-14 fw-700 rounded-1" value="1,100">
+					<span class="text-wsred">of</span>
+					<span class="text-wsred">1000</span>
+				</div>
+				<button>
+					<span class="material-symbols-rounded" style="">chevron_right</span>
+					<span>Next</span>
+				</button>
+				<button>
+					<span class="material-symbols-rounded" style="">last_page</span>
+					<span>Last</span>
+				</button>
+			</div>
+		</footer>
+	</div><!-- end #app -->
+
+	<div class="modal  fade rounded-1" id="delete-medication" tabindex="-1" aria-labelledby="delete-medication" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered">
+			<div class="modal-content bg-warning-subtle">
+				<div class="modal-header p-3 text-bg-warning">
+					<h2 class="modal-title fs-6 fw-600" id="delete-medication">Confirm Delete</h2>
+					<button type="button" class="btn-close fspx-15" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body  p-3">
+					Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugit non quibusdam minus rem ratione beatae delectus culpa odit enim ullam quos neque autem iste nisi ipsum placeat, maxime, veniam sint?
+				</div>
+				<div class="modal-footer  p-2 d-flex align-items-center justify-content-between">
+					<button type="button" class="btn btn-sm btn-danger wpx-75" data-bs-dismiss="modal">Cancel</button>
+					<button type="button" class="btn btn-sm btn-success  wpx-75">Confirm</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<!-- jQuery -->
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<!-- Typeahead.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/corejs-typeahead/1.3.1/typeahead.bundle.min.js"></script>
+	<!-- Main Js -->
+<script type="module" src="js/main.js"></script>
+	<script type="module" src="js/typeahead.js"></script>
+</body>
+
+</html>

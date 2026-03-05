@@ -1,0 +1,18 @@
+.alert-ocrx-light {
+	padding:1rem;
+	background-color:rgba($ocrx-light, .2);
+	border: 1px solid rgba($ocrx-light, 1);
+}
+
+.fade-toggle {
+  transition: opacity 0.4s ease, visibility 0.4s ease , height 0.4s ease;
+  opacity: 1;
+  visibility: visible;
+	height:auto;
+}
+
+.fade-toggle.hidden {
+  opacity: 0;
+  visibility: hidden;
+	height:0;
+}

@@ -1,0 +1,45 @@
+.btn-fingerscan {
+	color: $primary;
+	bottom:5rem;
+	[class^="material-symbols"] {
+		font-weight: bold;
+		font-size: 5.5rem;
+		transition: all .2s ease-in-out;
+	}
+	
+	&:hover,
+	&:active {
+		color: darken($primary, 20%);
+		[class^="material-symbols"] {
+			font-weight: bold;
+			font-size: 5.3rem;
+			transition: all .2s ease-in-out;
+		}
+	}
+
+	@media (max-height:844px){
+		bottom:3rem;	
+	}
+
+	@media (max-height:667px){
+		bottom:1.5rem;	
+	}
+}
+
+
+.btn-share {
+	position: absolute;
+	top: 1rem;
+	right: 1rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding:5px 8px;
+	gap:6px;
+	font-size:13px;
+	font-weight: 600;
+	[class^="material-symbols"] {
+		font-size: 18px;
+		line-height: 18px;
+	}
+}

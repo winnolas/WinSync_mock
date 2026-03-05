@@ -1,0 +1,54 @@
+.form-signin {
+	text-align: center;
+
+	h1, h2, h3, h4, h5, h6 {
+		font-family: $lexend;
+	}
+
+	h1.h2,
+	h2 {
+		font-size:1.3rem !important;
+	}
+
+	input[type="email"] {
+		margin-bottom: 1rem;
+		// border-bottom-right-radius: 0;
+		// border-bottom-left-radius: 0;
+		// &.flogin-top {
+		// 	margin-bottom: -1px;
+		// 	border-radius: var(--bs-border-radius-lg);
+		// 	border-bottom-right-radius: 0;
+		// 	border-bottom-left-radius: 0;
+		// }
+		// &.flogin-bottom {
+		// 	margin-bottom: 10px;
+		// 	border-radius: var(--bs-border-radius-lg);
+		// 	border-top-left-radius: 0;
+		// 	border-top-right-radius: 0;
+		// }
+		// &.f-rounded { border-radius: var(--bs-border-radius-lg); }
+	}
+
+	input[type="password"] {
+		margin-bottom: 1rem;
+		// border-top-left-radius: 0;
+		// border-top-right-radius: 0;
+		// &.flogin-top {
+		// 	margin-bottom: -1px;
+		// 	border-radius: var(--bs-border-radius-lg);
+		// 	border-bottom-right-radius: 0;
+		// 	border-bottom-left-radius: 0;
+		// }
+		// &.flogin-bottom {
+		// 	margin-bottom: 10px;
+		// 	border-radius: var(--bs-border-radius-lg);
+		// 	border-top-left-radius: 0;
+		// 	border-top-right-radius: 0;
+		// }
+		// &.f-rounded { border-radius: var(--bs-border-radius-lg); }
+	}
+
+	h1, h1 > span, p {
+		outline: none;
+	}
+}

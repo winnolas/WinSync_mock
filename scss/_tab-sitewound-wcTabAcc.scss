@@ -1,0 +1,201 @@
+@use "variables";
+
+.wcTabAcc {
+  $wcTabAcc-primary: #a1c5e1;
+  $wcTabAcc-primary: rgba($ocrx-dark, 0.15);
+  $wcTabAcc-primary-active: $ocrx-dark;
+  $wcTabAcc-primary-active: rgba($ocrx-dark, 0.75);
+  $wccTabAccItemWidth: 7.25rem;
+	margin-top: 4rem;
+	@media(max-width:575px) {
+		margin-top:2rem;
+	}
+	
+	.bg-ws-tab-active { background-color: $wcTabAcc-primary-active; }
+
+  position: relative;
+
+  .ws-btn-remove {
+    [class^="material-symbols-"] {
+      font-size: 18px;
+      line-height: 18px;
+      font-weight: 600;
+      color: rgba($ocrx-dark, 0.9);
+      transition: all .2s ease;
+
+      &:hover {
+        color: red;
+        font-variation-settings:
+          'FILL' 1;
+        transition: all .2s ease;
+      }
+    }
+  }
+
+  &__label {
+    background-color: rgba($wcTabAcc-primary, 0.1);
+    border-bottom: 1px solid #fff;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-weight: 600;
+    padding: 8px 10px;
+    color: rgba($ocrx-dark, .75);
+    width: $wccTabAccItemWidth;
+		text-align: center;
+    text-wrap: nowrap;
+    margin-bottom: -1px;
+    transition: color 0.2s ease, background-color 0.2s ease;
+
+    position: absolute;
+    top: -36px;
+
+    > div {
+      font-size: 1rem;
+      line-height: 1rem;
+      padding: 0;
+    }
+
+		span::after {
+			content: '+';
+			font-size: 1rem;
+      line-height: 1rem;
+		}
+
+    &:hover {
+      color: #fff;
+      background-color: $wcTabAcc-primary-active;
+      transition: color 0.2s ease, background-color 0.2s ease;
+      a.ws-btn-remove {
+        [class^="material-symbols-"] {
+          color: rgba(#fff, 0.9);
+          transition: all .2s ease;
+        }
+      }
+    }
+  }
+
+  &__input {
+    display: none;
+
+    &:not(:checked) {
+      +.wcTabAcc__label+.wcTabAcc__content {
+        transition: display .1s ease, opacity .1s ease;
+      }
+    }
+
+    &:checked {
+      +.wcTabAcc__label {
+        background-color: rgba($wcTabAcc-primary, 0.4);
+        color:  rgba($ocrx-dark, 1);
+        font-weight: 600;
+        margin-bottom: -2px;      }
+
+      +.wcTabAcc__label+.wcTabAcc__content {
+        width: 100%;
+        opacity:1;
+        transition: display .1s ease, opacity .1s ease;
+
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+				@media(max-width:901px) {
+					grid-template-columns: 1fr;
+				}
+      }
+    }
+    $wcTabAcc-start-left: $wccTabAccItemWidth;
+    $wcTabAcc-increment: calc($wccTabAccItemWidth + 1px);
+    $wcTabAcc-tabs: 20;
+
+    @for $i from 1 through $wcTabAcc-tabs {
+      &#wcTabAcc-#{$i}+.wcTabAcc__label {
+        left: calc(#{$wcTabAcc-start-left} + ($wcTabAcc-increment * ($i - 2)));
+      }
+    }
+  }
+
+
+  &__title {
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    color: #000;
+    font-weight: 600;
+  }
+
+  &__content {
+    display: none;
+    padding: 0;
+    background-color: #fff;
+		border: 2px solid rgba($ocrx-dark, .2);
+    margin-top: 36px;
+    opacity:0;
+    transition-behavior: allow-discrete;
+
+
+    &::-webkit-scrollbar {
+			width: 5px;
+			height: 5px;
+			margin-left: 3px;
+		}
+		&::-webkit-scrollbar-track {
+			box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+		}
+		&::-webkit-scrollbar-thumb {
+			background-color: rgba($ocrx-primary, 0.3);
+			border-radius: 8px;
+		}
+
+    &.bg-tab-gray {
+      background-color: rgba(96, 125, 139, .1);
+    }
+
+		.wcTabAcc_col {
+			display: grid;
+			grid-template-columns: .65fr 1fr;
+			> div { padding: 8px; }
+			> .wa-wc-left { 
+				padding-top: 12px;
+				background-color: rgba($ocrx-dark, 0.1);
+				text-align: right;
+				@media(max-width: 575px){
+					text-align: left;
+				}
+			}
+		}
+  }
+}
+
+
+/*Wide Screens*/
+@media (max-width: 575px) {
+  .wcTabAcc {
+    display: flex;
+    flex-direction: column;
+    // flex-wrap: wrap;
+
+    &__label {
+      // border-right: 1px solid #fff;
+      // display: inline-flex;
+      margin:1px 0;
+      align-items: center;
+      width: 100% !important;
+      position: relative;
+      left:0 !important;
+      top:0;
+    }
+
+    &__input:checked+.wcTabAcc__label+.wcTabAcc__content {
+      display: block;
+    }
+
+    &__content {
+      margin-top:0;
+      display: none;
+      order: 100;
+      padding: 0;
+    }
+  }
+}

@@ -1,0 +1,109 @@
+@use "variables";
+
+/* =========================
+   Wrapper
+========================= */
+.select-card-wrapper {
+	display: block;
+	cursor: pointer;
+	position: relative;
+	height: 100%;
+}
+
+/* Hide input but keep accessible */
+.select-input {
+	position: absolute;
+	opacity: 0;
+}
+
+/* =========================
+   Card Base
+========================= */
+.select-card {
+	background-color: rgba($ocrx-light, 0.3);
+	border-radius: 0.25rem;
+	padding: 3px 6px;
+	transition: .2s ease;
+	position: relative;
+	height: 100%;
+	display: flex;
+	flex-direction: row;
+	gap: 7px;
+	align-items: center;
+}
+
+.select-card:hover {
+	border-color: #0d6efd;
+}
+
+/* =========================
+   Indicator Base
+========================= */
+.select-indicator {
+	width: 18px;
+	height: 18px;
+	border: 2px solid #adb5bd;
+	transition: .2s ease;
+	background: #fff;
+	margin-top: -2px;
+	position: relative;
+}
+
+/* RADIO indicator */
+.select-input[type="radio"]+.select-card .select-indicator {
+	border-radius: 50%;
+}
+
+/* CHECKBOX indicator */
+.select-input[type="checkbox"]+.select-card .select-indicator {
+	border-radius: 4px;
+}
+
+/* =========================
+   Checked State Card
+========================= */
+.select-input:checked+.select-card {
+	border-color: $ocrx-primary;
+	background: #eef5ff;
+	box-shadow: 0 0 0 2px rgba(13, 110, 253, .15);
+}
+
+/* Radio dot */
+.select-input[type="radio"]:checked+.select-card .select-indicator {
+	border-color: $ocrx-primary;
+	background: radial-gradient($ocrx-primary 55%, transparent 56%);
+}
+
+/* Checkbox fill */
+.select-input[type="checkbox"]:checked+.select-card .select-indicator {
+	background: $ocrx-primary;
+	border-color: $ocrx-primary;
+}
+
+/* Checkbox checkmark */
+.select-input[type="checkbox"]:checked+.select-card .select-indicator::after {
+	font-family: "Material Symbols Outlined";
+	content: "";
+	color: #fff;
+	font-size: 15px;
+	line-height: 15px;
+	font-weight: 600;
+	position: absolute;
+	top: 0;
+	left: -1px;
+}
+
+/* =========================
+   Disabled State
+========================= */
+.select-input:disabled+.select-card {
+	opacity: .6;
+	cursor: not-allowed;
+}
+
+/* =========================
+   Optional Modifier
+========================= */
+.select-card.recommended {
+	border-color: #198754;
+}

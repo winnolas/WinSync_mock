@@ -1,0 +1,106 @@
+.search-patient-top {
+	font-size: 15px;
+	
+	#search-date-picker,
+	#search-patient-top {
+		width: 100%;
+			border-color: $ocrx-light;
+		&:focus {
+			border-color: $ocrx-light;
+			box-shadow: 0 0 0 0.25rem rgba($ocrx-primary, 0);
+		}
+	}
+
+	#search-date-picker {
+		&:focus {
+			background-color: rgba($ocrx-light, 0.5);
+		}
+	}
+
+		// Datepicker container
+	.datepicker-wrap {
+		width: 130px;
+		flex-shrink: 0;
+		transition: width 0.25s ease, opacity 0.25s ease, visibility 0.25s ease;
+
+		// When hidden (using d-none)
+		&.d-none {
+			width: 0 !important;
+			margin: 0 !important;
+			padding: 0 !important;
+			opacity: 0;
+			visibility: hidden;
+			overflow: hidden;
+			flex-shrink: 1;
+		}
+	}
+
+	// Make search fill width when datepicker hidden
+	.datepicker-wrap.d-none + .position-relative,
+	.position-relative:only-child {
+		flex: 1 1 100% !important;
+	}
+
+	// Inputs
+	input.form-control {
+		height: 38px;
+		font-weight: 500;
+	}
+
+	.tt-menu {
+		position: absolute !important;
+		width: 100% !important;
+		max-height: 250px;
+		overflow-y: auto;
+		background-color: $body-bg;
+		border: 1px solid $ocrx-light;
+		border-radius: .5rem;
+		box-shadow: 0 0.2rem 1rem rgba($ocrx-dark, 0.5);
+		z-index: 9999;
+		margin-top: 0.25rem;
+		padding: 0;
+		font-weight: 500;
+
+		&::-webkit-scrollbar {
+			width: 8px;
+		}
+
+		&::-webkit-scrollbar-track {
+			background: #f1f1f1;
+		}
+
+		&::-webkit-scrollbar-thumb {
+			background-color: $ocrx-primary;
+			border-radius: 10px;
+			border: 2px solid transparent;
+			background-clip: content-box;
+		}
+	}
+
+	.tt-suggestion {
+		padding: 0.5rem 0.75rem;
+		cursor: pointer;
+		color: $body-color;
+		transition: background-color 0.2s ease, color 0.2s ease;
+
+		&:nth-child(odd) {
+			background-color: rgba($ocrx-light, 0.1);
+		}
+
+		&:nth-child(even) {
+			background-color: $white;
+		}
+
+		&:hover,
+		&.tt-cursor {
+			background-color: $ocrx-primary;
+			color: $white;
+		}
+	}
+}
+
+.search-patient-top .twitter-typeahead {
+	display: flex !important;
+	flex: 1 1 auto !important;
+	min-width: 0;
+}

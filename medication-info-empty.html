@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<title>WinSync</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="author" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta name="description" content="">
+
+	<!-- favicon icon -->
+	<link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+	<link rel="manifest" href="img/favicon/site.webmanifest">
+
+	<!-- google fonts preconnect -->
+	<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+	<!-- main style -->
+	<link rel="stylesheet" href="css/ocrx.min.css" />
+</head>
+
+
+<body>
+	<div id="app" class="bg-content">
+		<header class="main-header p-2">
+
+			<div class="wpx-40">
+				<button type="button" class="btn p-0 wpx-40 hpx-40 d-flex align-items-center justify-content-center" onclick="location.href = 'medication-list.html';">
+					<i class="uil uil-arrow-left fspx-30 lhpx-30 mpxs-n-1"></i>
+				</button>
+			</div>
+
+			<div class="text-ocrx-dark d-flex flex-wrap gap-2">
+				<h2 class="m-0 fs-6 fw-bold">Medication Profill</h2>
+				<div class="fspx-10 lhpx-10 fw-600 rounded-1 btn btn-outline-ocrx-dark ppxx-3 ppxy-2 w-mincontent">Beta</div>
+				<!-- <small class="d-flex flex-row gap-1 text-body-secondary fw-medium align-items-center">
+					<div class="material-symbols-outlined fill fspx-14 lhpx-14 mpxt-n-1">calendar_month</div>
+					<div>08/05/2025</div>
+				</small> -->
+			</div>
+
+			<div class="ms-auto d-flex flex-row justify-content-end gap-2">
+				<!-- <button type="button" class="btn p-0 wpx-40 hpx-40 d-flex align-items-center justify-content-center position-relative">
+					<i class="uil uil-bell fspx-30 lhpx-30 mpxs-n-1"></i>
+					<span class="position-absolute translate-middle bg-danger border border-light rounded-circle hpx-15 wpx-15" style="top:10px; right:-5px;">
+						<span class="visually-hidden"></span>
+					</span>
+				</button> -->
+
+				<button type="button" class="btn p-0 wpx-40 hpx-40 d-flex align-items-center justify-content-center position-relative" data-bs-toggle="dropdown" aria-expanded="false">
+					<span class="material-symbols-rounded fspx-30 lhpx-30 ">more_vert</span>
+				</button>
+				<ul class="dropdown-menu p-0">
+					<li>
+						<a class="dropdown-item d-flex flex-row align-items-center gap-2 fspx-13 lhpx-13 fw-500 ppx-10" href="switchagency.html">
+							<i class="uil uil-clinic-medical fspx-18 lhpx-18"></i>
+							<span>Swtich Agency</span>
+						</a>
+					</li>
+					<li>
+						<hr class="dropdown-divider m-0">
+					</li>
+					<li>
+						<a class="dropdown-item d-flex flex-row align-items-center gap-2 fspx-13 lhpx-13 fw-500 ppx-10" href="#">
+							<i class="uil uil-signout fspx-18 lhpx-18"></i>
+							<span>Log Out</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+			
+		</header>
+
+		<div></div>
+
+		<main class="main-content mx-2 rounded">
+			<div class="card p-3 d-flex flex-column gap-3 mb-3 bg-ocrx-card">
+				<a href="#" class="d-block link-body-emphasis text-decoration-none">
+					<img src="./img/profile/profile-1.png" alt="" width="50" height="50" class="rounded-circle">
+				</a>
+				<div>
+					<h2 class="m-0 mb-1 fs-5 fw-bold text-ocrx-dark">Guillermo Acevedo Rivera</h2>
+					<div class="fspx-12 lhpx-16 text-body-secondary"><b>Medication Profile</b> - 04/12/2025</div>
+				</div>
+			</div>
+
+			<nav class="mpxb-n-2">
+				<div class="nav nav-tabs nav-ocrx" id="nav-tab" role="tablist">
+					<button class="nav-link fspx-15 ppxt-11 fw-600 active" id="nav-med-tab" data-bs-toggle="tab" data-bs-target="#nav-med" type="button" role="tab" aria-controls="nav-med" aria-selected="true">Medication</button>
+					<button class="nav-link fspx-15 ppxt-11 fw-600" id="nav-discontinue-tab" data-bs-toggle="tab" data-bs-target="#nav-discontinue" type="button" role="tab" aria-controls="nav-discontinue" aria-selected="false">Discontinued</button>
+					<button class="nav-link fspx-15 ppxt-11 fw-600" id="nav-other-tab" data-bs-toggle="tab" data-bs-target="#nav-other" type="button" role="tab" aria-controls="nav-other" aria-selected="false">Other</button>
+				</div>
+			</nav>
+			<div class="tab-content bg-white rounded-3" id="nav-tabContent">
+				<div class="tab-pane fade show active" id="nav-med" role="tabpanel" aria-labelledby="nav-med-tab" tabindex="0">
+
+					<div class="bg-white rounded p-2">
+						<div class="card rounded p-4 d-flex align-items-center justify-content-center hpx-200">
+							<span class="fspx-18 text-body-tertiary">No items available</span>
+						</div>
+					</div>
+
+				</div>
+				<div class="tab-pane fade" id="nav-discontinue" role="tabpanel" aria-labelledby="nav-discontinue-tab" tabindex="0">
+
+					<div class="bg-white rounded p-2">
+						<div class="card rounded p-4 d-flex align-items-center justify-content-center hpx-200">
+							<span class="fspx-18 text-body-tertiary">No items available</span>
+						</div>
+					</div>
+
+				</div>
+				<div class="tab-pane fade" id="nav-other" role="tabpanel" aria-labelledby="nav-other-tab" tabindex="0">
+					<div class="p-3 fspx-13">
+						<h4 class="mb-1 fspx-16 fw-700 text-ocrx-dark">Allergies</h4>
+						<div class="mb-2 fspx-12">(Drug, Food, Latex, Environment)</div>
+						<div class="mb-3">
+							<textarea class="form-control rounded-1" id="" rows="3"></textarea>
+						</div>
+
+						<hr class="my-4">
+
+						<h4 class="mb-2 fspx-16 fw-700 text-ocrx-dark">Oxygen</h4>
+
+						<label for="text" class="form-label fw-600">Oxygen at</label>
+						<input type="text" id="text" class="form-control rounded-1 mb-3" aria-describedby="">
+
+						<label for="text" class="form-label fw-600">Liter Per Minute via:</label>
+						<div class="d-flex flex-row gap-1 align-items-center mb-3">
+							<div class="form-check form-check-inline d-flex flex-row align-items-center gap-1">
+								<input class="form-check-input hpx-18 wpx-18 mpxe-5 mpxt-n-1" type="checkbox" id="inlineCheckbox1" value="option1">
+								<label class="form-check-label" for="inlineCheckbox1">Nassal Canula</label>
+							</div>
+							<div class="form-check form-check-inline d-flex flex-row align-items-center gap-1">
+								<input class="form-check-input hpx-18 wpx-18 mpxe-5 mpxt-n-1" type="checkbox" id="inlineCheckbox2" value="option2">
+								<label class="form-check-label" for="inlineCheckbox2">Mask</label>
+							</div>
+							<div class="form-check form-check-inline d-flex flex-row align-items-center gap-1">
+								<input class="form-check-input hpx-18 wpx-18 mpxe-5 mpxt-n-1" type="checkbox" id="inlineCheckbox3" value="option3">
+								<label class="form-check-label" for="inlineCheckbox3">Ventilator</label>
+							</div>
+						</div>
+
+						<label for="text" class="form-label fw-600">Frequency:</label>
+						<div class="d-flex flex-row gap-1 align-items-center">
+							<div class="form-check form-check-inline d-flex flex-row align-items-center gap-1">
+								<input class="form-check-input hpx-18 wpx-18 mpxe-5 mpxt-n-1" type="checkbox" id="inlineCheckbox1" value="option1">
+								<label class="form-check-label" for="inlineCheckbox1">As Needed</label>
+							</div>
+							<div class="form-check form-check-inline d-flex flex-row align-items-center gap-1">
+								<input class="form-check-input hpx-18 wpx-18 mpxe-5 mpxt-n-1" type="checkbox" id="inlineCheckbox2" value="option2">
+								<label class="form-check-label" for="inlineCheckbox2">Continuous</label>
+							</div>
+							<div class="form-check form-check-inline d-flex flex-row align-items-center gap-1">
+								<input class="form-check-input hpx-18 wpx-18 mpxe-5 mpxt-n-1" type="checkbox" id="inlineCheckbox3" value="option3">
+								<label class="form-check-label" for="inlineCheckbox3">At Bedtime</label>
+							</div>
+						</div>
+
+						<hr class="my-4">
+
+						<h4 class="mb-2 fspx-16 fw-700 text-ocrx-dark">Pharmacy</h4>
+
+						<label for="text" class="form-label fw-600">Name</label>
+						<input type="text" id="text" class="form-control rounded-1 mb-3" aria-describedby="">
+
+						<label for="text" class="form-label fw-600">Address</label>
+						<input type="text" id="text" class="form-control rounded-1 mb-3" aria-describedby="">
+
+						<label for="text" class="form-label fw-600">Phone/Fax</label>
+						<input type="text" id="text" class="form-control rounded-1 mb-3" aria-describedby="">
+
+						<p class="mb-0 text-body-tertiary">With my signature, I have performed a medication review of all medications the patient is currently using in order to identify any potential adverse effects and drug reactions, including ineffective drug therapy, significant side effects, significant drug interactions, duplicate drug therapy, and noncompliance with drug therapy.</p>
+					</div>
+				</div>
+			</div>
+
+		</main>
+
+		<footer class="main-footer">
+			<div class="nav-footer pagination">
+				<button onclick="location.href = 'medication-info.html';">
+					<span class="material-symbols-rounded" style="">cancel</span>
+					<span>Cancel</span>
+				</button>
+				<button onclick="location.href = 'medication-add.html';">
+					<span class="material-symbols-outlined">assignment_add</span>
+					<span>Add Medication</span>
+				</button>
+				<button onclick="location.href = 'medication-add.html';">
+					<span class="material-symbols-rounded">document_scanner</span>
+					<span>Scan Medication</span>
+				</button>
+				<button onclick="location.href = 'medication-info.html';">
+					<span class="material-symbols-rounded" style="">check_circle</span>
+					<span>Save</span>
+				</button>
+			</div>
+		</footer>
+
+	</div><!-- end #app -->
+
+	<div class="modal  fade rounded-1" id="delete-medication" tabindex="-1" aria-labelledby="delete-medication" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered">
+			<div class="modal-content bg-warning-subtle">
+				<div class="modal-header p-3 text-bg-warning">
+					<h2 class="modal-title fs-6 fw-600" id="delete-medication">Confirm Delete</h2>
+					<button type="button" class="btn-close fspx-15" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body  p-3">
+					Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugit non quibusdam minus rem ratione beatae delectus culpa odit enim ullam quos neque autem iste nisi ipsum placeat, maxime, veniam sint?
+				</div>
+				<div class="modal-footer  p-2 d-flex align-items-center justify-content-between">
+					<button type="button" class="btn btn-sm btn-danger wpx-75" data-bs-dismiss="modal">Cancel</button>
+					<button type="button" class="btn btn-sm btn-success  wpx-75">Confirm</button>
+				</div>
+			</div>
+		</div>
+	</div>
+<script type="module" src="js/main.js"></script>
+</body>
+
+</html>

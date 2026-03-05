@@ -1,0 +1,35 @@
+.main-content {
+	overflow-y: auto;
+	overflow-x: hidden;
+	  &::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+
+	&.start-screen {
+		width: 565px;
+		justify-content: center;
+		margin:0 auto;
+		@include media-breakpoint-down(sm) {
+			width: 100%;
+		}
+	}
+
+  &::-webkit-scrollbar-track {
+    background: rgba($ocrx-primary, 0.3);
+    margin: 0 1px;
+    width: 6px;
+    height: 6px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: darken($ocrx-primary, 10%);
+    width: 5px;
+    height: 5px;
+    border-radius: 5px;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background-color: rgba($ocrx-primary, 0.8);
+  }
+}
